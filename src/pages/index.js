@@ -32,7 +32,7 @@ export default function Home() {
     <Container maxWidth="sm">
       <Box sx={{ my: 12 }}>
         <Text variant="h4" component="h1" gutterBottom>
-          Hi, I'm <Name>Dima</Name>, a DevOps Engineer from <City>Kyiv</City>, <Country>Ukraine</Country>.
+          Hi, I&apos;m <Name>Dima</Name>, a DevOps Engineer from <City>Kyiv</City>, <Country>Ukraine</Country>.
         </Text>
         <Text variant="body1" gutterBottom>
           I work in gamedev, passionate about automation, and enjoy doing web development for fun.

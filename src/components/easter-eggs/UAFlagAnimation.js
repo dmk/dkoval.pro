@@ -44,12 +44,8 @@ const UAFlagAnimation = ({active, setActive}) => {
         }}
         animate={active ? 'active' : 'inactive'}
         transition={{ duration: .5, ease: 'easeInOut' }}
-        onAnimationStart={() => {
-          console.log('starting transition')
-        }}
         onAnimationComplete={() => {
           setActive(false);
-          console.log('ending transition')
         }}
       >
         <UkrainianFlagSvg width="100%" height="100%" />

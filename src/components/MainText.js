@@ -29,7 +29,7 @@ export default function MainText() {
   return (
     <>
       <Text variant="h4" component="h1" gutterBottom>
-        Hi, I&apos;m <Name>Dima</Name>, a DevOps Engineer from <City>Kyiv</City>,
+        Hi, I&apos;m <Name>Dmytro</Name>, a DevOps Engineer from <City>Kyiv</City>,&nbsp;
         <Country>Ukraine</Country>.
       </Text>
       <Text variant="body1" gutterBottom>

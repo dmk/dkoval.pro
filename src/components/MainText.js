@@ -12,7 +12,7 @@ const Text = styled(Typography)(({ theme }) => ({
 
 const HighlightedText = styled('span')(({ theme }) => ({
   ...highlighed.style,
-  fontSize: 34,
+  fontSize: 32,
 }));
 
 const Name = styled(HighlightedText)(({ theme }) => ({

@@ -40,7 +40,7 @@ const UAFlagAnimation = ({active, setActive}) => {
         }}
         variants={{
           inactive: { scale: 2, opacity: .05 },
-          active: { scale: 2.5, opacity: .5 },
+          active: { scale: 4, opacity: .5 },
         }}
         animate={active ? 'active' : 'inactive'}
         transition={{ duration: .5, ease: 'easeInOut' }}

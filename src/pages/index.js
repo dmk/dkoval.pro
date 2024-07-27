@@ -5,6 +5,8 @@ import Container from '@mui/material/Container';
 
 import MainText from "@/components/MainText";
 import Links from "@/components/Links";
+import { Button } from '@mui/material';
+import RubyPopupContainer from '@/components/easter-eggs/RubyPopup';
 
 export default function Home() {
   return (
@@ -25,6 +27,8 @@ export default function Home() {
           <Links />
         </Box>
       </Container>
+
+      <RubyPopupContainer />
     </>
   );
 }

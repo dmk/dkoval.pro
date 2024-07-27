@@ -1,28 +1,30 @@
-import { Raleway, Itim } from "next/font/google";
+import { Raleway, Paytone_One } from "next/font/google";
 
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/system';
 
-const raleway = Raleway({ subsets: ["latin"] });
-const handwriten = Itim({ subsets: ["latin"], weight: ["400"] });
+const main = Raleway({ subsets: ["latin"] });
+const highlighed = Paytone_One({ subsets: ["latin"], weight: ["400"] });
 
 const Text = styled(Typography)(({ theme }) => ({
-  ...raleway.style,
+  ...main.style,
 }))
 
-const Name = styled('span')(({ theme }) => ({
+const HighlightedText = styled('span')(({ theme }) => ({
+  ...highlighed.style,
+  fontSize: 34,
+}));
+
+const Name = styled(HighlightedText)(({ theme }) => ({
   color: '#6aa84f',
-  ...handwriten.style,
 }));
 
-const City = styled('span')(({ theme }) => ({
+const City = styled(HighlightedText)(({ theme }) => ({
   color: '#3d85c6',
-  ...handwriten.style,
 }));
 
-const Country = styled('span')(({ theme }) => ({
-  color: '#ffd966',
-  ...handwriten.style,
+const Country = styled(HighlightedText)(({ theme }) => ({
+  color: '#ffb000',
 }));
 
 export default function MainText() {
@@ -32,6 +34,7 @@ export default function MainText() {
         Hi, I&apos;m <Name>Dmytro</Name>, a DevOps Engineer from <City>Kyiv</City>,&nbsp;
         <Country>Ukraine</Country>.
       </Text>
+
       <Text variant="body1" gutterBottom>
         I work in gamedev, passionate about automation, and enjoy doing web
         developmentfor fun.

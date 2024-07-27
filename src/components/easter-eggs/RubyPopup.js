@@ -26,11 +26,11 @@ export function RubyPopup({ active, setActive }) {
     <Box>
       <motion.div
         variants={{
-          inactive: { scale: 1, rotate: -15, x: 0 },
-          active: { scale: 1.2, rotate: -45, x: -196 },
+          inactive: { scale: 1, rotate: 0, x: 0 },
+          active: { scale: 1.2, rotate: -30, x: -196 },
         }}
         animate={active ? 'active' : 'inactive'}
-        transition={{ type: 'spring', stiffness: 250, damping: 18 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 10 }}
         style={{ display: 'inline-block' }}
       >
         <RubySvg height={196} width={196} onClick={() => setActive(false)} />

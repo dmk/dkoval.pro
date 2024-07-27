@@ -5,6 +5,7 @@ import { styled } from '@mui/system';
 import { useState } from "react";
 import UAFlagAnimation from "./easter-eggs/UAFlagAnimation";
 import KyivAnimation from "./easter-eggs/KyivAnimation";
+import DimaPopup from "./easter-eggs/DimaPopup";
 
 const main = Raleway({ subsets: ["latin"] });
 const highlighed = Paytone_One({ subsets: ["latin"], weight: ["400"] });
@@ -33,11 +34,17 @@ const Country = styled(HighlightedText)(({ theme }) => ({
 export default function MainText() {
   const [uaFlagActive, setUAFlagActive] = useState(false);
   const [kyivActive, setKyivActive] = useState(false);
+  const [dimaPopupActive, setDimaPopupActive] = useState(false);
 
   return (
     <>
       <Text variant="h4" component="h1" gutterBottom>
-        Hi, I&apos;m <Name>Dmytro</Name>, a DevOps Engineer from
+        Hi, I&apos;m
+        &nbsp;
+        <Name onClick={() => setDimaPopupActive(!dimaPopupActive)}>
+          Dmytro
+        </Name>
+        , a DevOps Engineer from
         &nbsp;
         <City onClick={() => setKyivActive(true)}>
           Kyiv
@@ -55,6 +62,7 @@ export default function MainText() {
 
       <KyivAnimation active={kyivActive} setActive={setKyivActive} />
       <UAFlagAnimation active={uaFlagActive} setActive={setUAFlagActive} />
+      <DimaPopup active={dimaPopupActive} setActive={setDimaPopupActive} />
     </>
   )
 }

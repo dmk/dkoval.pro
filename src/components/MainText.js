@@ -39,17 +39,14 @@ export default function MainText() {
   return (
     <>
       <Text variant="h4" component="h1" gutterBottom>
-        Hi, I&apos;m
-        &nbsp;
+        Hi, I&apos;m&nbsp;
         <Name onClick={() => setDimaPopupActive(!dimaPopupActive)}>
           Dmytro
         </Name>
-        , a DevOps Engineer from
-        &nbsp;
+        , a DevOps Engineer from&nbsp;
         <City onClick={() => setKyivActive(true)}>
           Kyiv
-        </City>,
-        &nbsp;
+        </City>,&nbsp;
         <Country onClick={() => setUAFlagActive(true)}>
           Ukraine
         </Country>.

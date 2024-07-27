@@ -30,7 +30,7 @@ export function RubyPopup({ active, setActive }) {
           active: { scale: 1.2, rotate: -30, x: -196 },
         }}
         animate={active ? 'active' : 'inactive'}
-        transition={{ type: 'spring', stiffness: 200, damping: 10 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 15 }}
         style={{ display: 'inline-block' }}
       >
         <RubySvg height={196} width={196} onClick={() => setActive(false)} />

@@ -18,10 +18,10 @@ const LinkedInIcon = styled(LinkedIn)(({ theme }) => ({
 export default function Links() {
   return (
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-      <IconButton href="https://github.com/dmk" target="_blank">
+      <IconButton href="https://github.com/dmk" target="_blank" aria-label="Link to Dmytro's GitHub">
         <GitHubIcon />
       </IconButton>
-      <IconButton href="https://linkedin.com/in/dmk" target="_blank">
+      <IconButton href="https://linkedin.com/in/dmk" target="_blank" aria-label="Link to Dmytro's LinkedIn">
         <LinkedInIcon />
       </IconButton>
       <TwiXIcon link="https://twitter.com/dmkov41" />

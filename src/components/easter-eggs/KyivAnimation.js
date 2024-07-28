@@ -78,6 +78,7 @@ export default function KyivAnimation({ active, setActive }) {
       >
         <img
           src={currentImage.src}
+          alt='Kyiv'
           style={{
             width, height,
             objectFit: 'cover'

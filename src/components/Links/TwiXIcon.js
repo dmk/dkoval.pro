@@ -22,6 +22,7 @@ export default function TwiXIcon({ link }) {
     <IconButton
       href={link}
       target="_blank"
+      aria-label="Link to Dmytro's Twitter/X"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

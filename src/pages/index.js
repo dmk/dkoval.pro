@@ -6,9 +6,10 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import LinearProgress from '@mui/material/LinearProgress';
 
-import MainText from "@/components/MainText";
-import Links from "@/components/Links";
+import { MainTextRaw } from "@/components/MainText";
 
+const MainText = lazy(() => import("@/components/MainText"));
+const Links = lazy(() => import("@/components/Links"));
 const RubyPopupContainer = lazy(() => import('@/components/easter-eggs/RubyPopup'));
 
 export default function Home() {
@@ -22,13 +23,15 @@ export default function Home() {
       </Head>
 
       <Container maxWidth="sm">
-        <Box mt={12}>
-          <MainText />
-        </Box>
+        <Suspense fallback={<MainTextRaw />}>
+          <Box mt={12}>
+            <MainText />
+          </Box>
 
-        <Box mt={2}>
-          <Links />
-        </Box>
+          <Box mt={2}>
+            <Links />
+          </Box>
+        </Suspense>
       </Container>
 
       <Suspense fallback={<LinearProgress />}>

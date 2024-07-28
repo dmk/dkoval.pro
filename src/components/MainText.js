@@ -34,6 +34,21 @@ const Country = styled(HighlightedText)(({ theme }) => ({
   color: '#ffb000',
 }));
 
+export function MainTextRaw() {
+  return (
+    <>
+      <h4>
+        Hi, I&apos;m Dmytro, a DevOps Engineer from&nbsp; Kyiv, Ukraine.
+      </h4>
+
+      <p>
+        I work in gamedev, passionate about automation, and enjoy doing web
+        developmentfor fun.
+      </p>
+    </>
+  )
+}
+
 export default function MainText() {
   const [uaFlagActive, setUAFlagActive] = useState(false);
   const [kyivActive, setKyivActive] = useState(false);

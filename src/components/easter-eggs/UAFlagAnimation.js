@@ -39,11 +39,11 @@ const UAFlagAnimation = ({active, setActive}) => {
     <FullScreenContainer>
       <BlurContainer
         style={{
-          scale: 2, opacity: .0
+          scale: 1.5, opacity: .0
         }}
         variants={{
-          inactive: { scale: 2, opacity: .0 },
-          active: { scale: 4, opacity: .5 },
+          inactive: { scale: .8, opacity: .0 },
+          active: { scale: 1.5, opacity: .5 },
         }}
         animate={active ? 'active' : 'inactive'}
         transition={{ duration: .7, ease: 'easeInOut' }}

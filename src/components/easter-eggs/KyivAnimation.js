@@ -71,7 +71,7 @@ function KyivAnimation({ active, setActive }) {
           active: currentImage.active,
         }}
         animate={active ? 'active' : 'inactive'}
-        transition={{ duration: .7, ease: 'easeInOut' }}
+        transition={{ duration: .5, ease: 'easeInOut' }}
         onAnimationComplete={() => {
           setActive(false);
         }}

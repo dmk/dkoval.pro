@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { styled } from '@mui/system';
+import useWindowSize from '@/hooks/useWindowSize';
 
 const FullScreenContainer = styled('div')({
   position: 'fixed',
@@ -32,23 +33,25 @@ const UkrainianFlagSvg = ({ width, height }) => (
 );
 
 const UAFlagAnimation = ({active, setActive}) => {
+  const { width, height } = useWindowSize();
+
   return (
     <FullScreenContainer>
       <BlurContainer
         style={{
-          scale: 2, opacity: .05
+          scale: 2, opacity: .0
         }}
         variants={{
-          inactive: { scale: 2, opacity: .05 },
+          inactive: { scale: 2, opacity: .0 },
           active: { scale: 4, opacity: .5 },
         }}
         animate={active ? 'active' : 'inactive'}
-        transition={{ duration: .5, ease: 'easeInOut' }}
+        transition={{ duration: .7, ease: 'easeInOut' }}
         onAnimationComplete={() => {
           setActive(false);
         }}
       >
-        <UkrainianFlagSvg width="100%" height="100%" />
+        <UkrainianFlagSvg width={width} height={height} />
       </BlurContainer>
     </FullScreenContainer>
   );

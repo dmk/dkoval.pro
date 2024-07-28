@@ -13,7 +13,7 @@ export default function DimaPopup({ active, setActive }) {
         transition={{ type: 'spring', stiffness: 200, damping: 20 }}
         style={{ display: 'inline-block', y: 200 }}
       >
-        <img src='/images/dima.png' height={196} width={196} onClick={() => setActive(false)} />
+        <img src='/images/dima.webp' height={196} width={196} onClick={() => setActive(false)} />
       </motion.div>
     </Box>
   )

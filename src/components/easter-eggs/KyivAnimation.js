@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { styled } from '@mui/system';
+import useWindowSize from '@/hooks/useWindowSize';
 
 const FullScreenContainer = styled('div')({
   position: 'fixed',
@@ -27,22 +28,22 @@ const BlurContainer = styled(motion.div)({
 
 const imageConfigs = [
   {
-    src: '/images/kyiv/kyiv-1.jpg',
-    active: { scale: 1.2, opacity: 0.4 },
-    inactive: { scale: 1.1, opacity: 0 },
-  },
-  // {
-  //   src: '/images/kyiv/kyiv-2.jpg',
-  //   active: { scale: 1.2, opacity: 0.4 },
-  //   inactive: { scale: 1.1, opacity: 0 },
-  // },
-  {
-    src: '/images/kyiv/kyiv-3.jpg',
+    src: '/images/kyiv/kyiv-1.avif',
     active: { scale: 1.2, opacity: 0.4 },
     inactive: { scale: 1.1, opacity: 0 },
   },
   {
-    src: '/images/kyiv/kyiv-4.jpg',
+    src: '/images/kyiv/kyiv-2.avif',
+    active: { scale: 1.2, opacity: 0.4 },
+    inactive: { scale: 1.1, opacity: 0 },
+  },
+  {
+    src: '/images/kyiv/kyiv-3.avif',
+    active: { scale: 1.2, opacity: 0.4 },
+    inactive: { scale: 1.1, opacity: 0 },
+  },
+  {
+    src: '/images/kyiv/kyiv-4.avif',
     active: { scale: 1.2, opacity: 0.4 },
     inactive: { scale: 1.1, opacity: 0 },
   },
@@ -50,13 +51,14 @@ const imageConfigs = [
 
 function KyivAnimation({ active, setActive }) {
   const [currentImage, setCurrentImage] = useState(imageConfigs[0]);
+  const { width, height } = useWindowSize();
 
   useEffect(() => {
-    if (active) {
+    if (!active) {
       const randomIndex = Math.floor(Math.random() * imageConfigs.length);
       setTimeout(() => {
         setCurrentImage(imageConfigs[randomIndex]);
-      }, 1000);
+      }, 500);
     }
   }, [active]);
 
@@ -69,12 +71,18 @@ function KyivAnimation({ active, setActive }) {
           active: currentImage.active,
         }}
         animate={active ? 'active' : 'inactive'}
-        transition={{ duration: 0.5, ease: 'easeInOut' }}
+        transition={{ duration: .7, ease: 'easeInOut' }}
         onAnimationComplete={() => {
           setActive(false);
         }}
       >
-        <img src={currentImage.src} style={{ width: '100%', height: 'auto' }} />
+        <img
+          src={currentImage.src}
+          style={{
+            width, height,
+            objectFit: 'cover'
+          }}
+        />
       </BlurContainer>
     </FullScreenContainer>
   );

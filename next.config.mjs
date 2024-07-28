@@ -1,9 +1,8 @@
-const BuildAnalizer = await import('@next/bundle-analyzer');
-console.log(BuildAnalizer);
+// const BuildAnalizer = (await import('@next/bundle-analyzer')).default;
 
-const withBundleAnalyzer = ({
-  enabled: process.env.ANALYZE === 'true',
-})
+// const withBundleAnalyzer = BuildAnalizer({
+//   enabled: process.env.ANALYZE === 'true',
+// })
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -18,4 +17,5 @@ const nextConfig = {
   },
 };
 
+// export default withBundleAnalyzer(nextConfig);
 export default nextConfig;

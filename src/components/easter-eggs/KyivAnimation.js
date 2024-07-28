@@ -49,7 +49,7 @@ const imageConfigs = [
   },
 ];
 
-function KyivAnimation({ active, setActive }) {
+export default function KyivAnimation({ active, setActive }) {
   const [currentImage, setCurrentImage] = useState(imageConfigs[0]);
   const { width, height } = useWindowSize();
 
@@ -87,5 +87,3 @@ function KyivAnimation({ active, setActive }) {
     </FullScreenContainer>
   );
 };
-
-export default KyivAnimation;

@@ -1,11 +1,15 @@
+import { lazy, Suspense } from 'react';
+
 import Head from 'next/head';
 
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import LinearProgress from '@mui/material/LinearProgress';
 
 import MainText from "@/components/MainText";
 import Links from "@/components/Links";
-import RubyPopupContainer from '@/components/easter-eggs/RubyPopup';
+
+const RubyPopupContainer = lazy(() => import('@/components/easter-eggs/RubyPopup'));
 
 export default function Home() {
   return (
@@ -27,7 +31,9 @@ export default function Home() {
         </Box>
       </Container>
 
-      <RubyPopupContainer />
+      <Suspense fallback={<LinearProgress />}>
+        <RubyPopupContainer />
+      </Suspense>
     </>
   );
 }

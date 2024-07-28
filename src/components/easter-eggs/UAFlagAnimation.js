@@ -32,7 +32,7 @@ const UkrainianFlagSvg = ({ width, height }) => (
   </svg>
 );
 
-const UAFlagAnimation = ({active, setActive}) => {
+export default function UAFlagAnimation({ active, setActive }) {
   const { width, height } = useWindowSize();
 
   return (
@@ -56,5 +56,3 @@ const UAFlagAnimation = ({active, setActive}) => {
     </FullScreenContainer>
   );
 };
-
-export default UAFlagAnimation;

@@ -1,11 +1,14 @@
+import { Suspense, lazy, useState } from "react";
+
 import { Raleway, Paytone_One } from "next/font/google";
 
+import LinearProgress from "@mui/material/LinearProgress";
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/system';
-import { useState } from "react";
-import UAFlagAnimation from "./easter-eggs/UAFlagAnimation";
-import KyivAnimation from "./easter-eggs/KyivAnimation";
-import DimaPopup from "./easter-eggs/DimaPopup";
+
+const UAFlagAnimation = lazy(() => import("./easter-eggs/UAFlagAnimation"));
+const KyivAnimation = lazy(() => import("./easter-eggs/KyivAnimation"));
+const DimaPopup = lazy(() => import("./easter-eggs/DimaPopup"));
 
 const main = Raleway({ subsets: ["latin"] });
 const highlighed = Paytone_One({ subsets: ["latin"], weight: ["400"] });
@@ -57,9 +60,11 @@ export default function MainText() {
         developmentfor fun.
       </Text>
 
-      <KyivAnimation active={kyivActive} setActive={setKyivActive} />
-      <UAFlagAnimation active={uaFlagActive} setActive={setUAFlagActive} />
-      <DimaPopup active={dimaPopupActive} setActive={setDimaPopupActive} />
+      <Suspense fallback={<LinearProgress />}>
+        <KyivAnimation active={kyivActive} setActive={setKyivActive} />
+        <UAFlagAnimation active={uaFlagActive} setActive={setUAFlagActive} />
+        <DimaPopup active={dimaPopupActive} setActive={setDimaPopupActive} />
+      </Suspense>
     </>
   )
 }

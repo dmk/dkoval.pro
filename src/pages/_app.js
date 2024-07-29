@@ -8,6 +8,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import theme from '@/theme';
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import PageTransition from "@/components/PageTransition";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -27,7 +28,11 @@ export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Component {...pageProps} />
+
+      <PageTransition>
+        <Component {...pageProps} />
+      </PageTransition>
+
       <GoogleAnalytics />
     </ThemeProvider>
   );

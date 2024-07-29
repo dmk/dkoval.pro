@@ -6,12 +6,12 @@ export default function DimaPopup({ active, setActive }) {
     <Box position='fixed' bottom={0} right={196}>
       <motion.div
         variants={{
-          inactive: { scale: 1, rotate: 15, y: 200 },
-          active: { scale: 1.1, rotate: -5, y: 30 },
+          inactive: { scale: 1, rotate: 15, y: 200, display: 'none' },
+          active: { scale: 1.1, rotate: -5, y: 30, display: 'inline-block' },
         }}
         animate={active ? 'active' : 'inactive'}
         transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-        style={{ display: 'inline-block', y: 200 }}
+        style={{ display: 'none', y: 200 }}
       >
         <img
           src='/images/dima.webp'

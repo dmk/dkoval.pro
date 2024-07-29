@@ -7,6 +7,7 @@ import Container from '@mui/material/Container';
 import LinearProgress from '@mui/material/LinearProgress';
 
 import { MainTextRaw } from "@/components/MainText";
+import { Slide } from '@mui/material';
 
 const MainText = lazy(() => import("@/components/MainText"));
 const Links = lazy(() => import("@/components/Links"));

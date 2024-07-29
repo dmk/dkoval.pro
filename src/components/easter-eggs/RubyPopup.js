@@ -10,7 +10,7 @@ const hoverZoneBackgroundColor =
 const HoverZone = styled('div')({
   position: 'fixed',
   right: 0,
-  top: 150,
+  top: 30,
   bottom: 0,
   width: '30px',
   height: '150px',
@@ -46,7 +46,7 @@ export default function RubyPopupContainer() {
     <>
       <HoverZone onClick={() => setActive(!active)} />
 
-      <Box position='fixed' top={150} right={-196}>
+      <Box position='fixed' top={30} right={-196}>
         <RubyPopup active={active} setActive={setActive} />
       </Box>
     </>

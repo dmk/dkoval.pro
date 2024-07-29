@@ -15,7 +15,7 @@ const highlighed = Paytone_One({ subsets: ["latin"], weight: ["400"] });
 
 const Text = styled(Typography)(({ theme }) => ({
   ...main.style,
-}))
+}));
 
 const HighlightedText = styled('span')(({ theme }) => ({
   ...highlighed.style,
@@ -83,3 +83,5 @@ export default function MainText() {
     </>
   )
 }
+
+export { Text };

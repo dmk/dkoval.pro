@@ -12,6 +12,7 @@ import PageTransition from "@/components/PageTransition";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
+  const { transitionDirection } = pageProps;
 
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -29,7 +30,7 @@ export default function App({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
-      <PageTransition>
+      <PageTransition direction={transitionDirection}>
         <Component {...pageProps} />
       </PageTransition>
 

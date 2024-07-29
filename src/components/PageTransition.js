@@ -1,15 +1,24 @@
 import { motion, AnimatePresence } from 'framer-motion';
 
 const variants = {
-  hidden: { opacity: 0, x: -200, y: 0 },
+  hidden: (direction) => ({
+    opacity: 0,
+    x: direction === 'right' ? -200 : direction === 'left' ? 200 : 0,
+    y: direction === 'down' ? -200 : direction === 'up' ? 200 : 0,
+  }),
   enter: { opacity: 1, x: 0, y: 0 },
-  exit: { opacity: 0, x: 200, y: 0 },
+  exit: (direction) => ({
+    opacity: 0,
+    x: direction === 'right' ? 200 : direction === 'left' ? -200 : 0,
+    y: direction === 'down' ? 200 : direction === 'up' ? -200 : 0,
+  }),
 };
 
-const PageTransition = ({ children }) => {
+const PageTransition = ({ children, direction }) => {
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       <motion.div
+        custom={direction}
         initial="hidden"
         animate="enter"
         exit="exit"

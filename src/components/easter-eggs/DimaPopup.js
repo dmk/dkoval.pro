@@ -11,7 +11,7 @@ export default function DimaPopup({ active, setActive }) {
         }}
         animate={active ? 'active' : 'inactive'}
         transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-        style={{ display: 'none', y: 200 }}
+        style={{ display: 'none', cursor: 'pointer', y: 200 }}
       >
         <img
           src='/images/dima.webp'

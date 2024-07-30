@@ -14,6 +14,7 @@ const HoverZone = styled('div')({
   bottom: 0,
   width: '30px',
   height: '150px',
+  cursor: 'pointer',
   backgroundColor: hoverZoneBackgroundColor,
   zIndex: 1000,
   '&:hover + div': {
@@ -31,7 +32,7 @@ export function RubyPopup({ active, setActive }) {
         }}
         animate={active ? 'active' : 'inactive'}
         transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-        style={{ display: 'none' }}
+        style={{ display: 'none', cursor: 'pointer' }}
       >
         <RubySvg height={196} width={196} onClick={() => setActive(false)} />
       </motion.div>

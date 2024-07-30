@@ -7,6 +7,7 @@ import Container from '@mui/material/Container';
 import LinearProgress from '@mui/material/LinearProgress';
 
 import { MainTextRaw } from "@/components/MainText";
+import ArrowLink from '@/components/ArrowLink';
 
 const MainText = lazy(() => import("@/components/MainText"));
 const Links = lazy(() => import("@/components/Links"));
@@ -14,7 +15,7 @@ const RubyPopupContainer = lazy(() => import('@/components/easter-eggs/RubyPopup
 
 export default function Home() {
   return (
-    <>
+    <Box width='100vw' height='90vh'>
       <Head>
         <title>Dmytro Koval | DevOps Engineer</title>
         <meta name="description" content="Welcome to my personal website. I am Dima, a DevOps Engineer
@@ -34,10 +35,13 @@ export default function Home() {
         </Suspense>
       </Container>
 
+      <ArrowLink href="/projects" text="Projects" placement='right' />
+      <ArrowLink href="/career" text="Career" placement='bottom' />
+
       <Suspense fallback={<LinearProgress />}>
         <RubyPopupContainer />
       </Suspense>
-    </>
+    </Box>
   );
 }
 

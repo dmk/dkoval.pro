@@ -36,6 +36,7 @@ export default function Home() {
       </Container>
 
       <ArrowLink href="/projects" text="Projects" placement='right' />
+      <ArrowLink href="/career" text="Career" placement='bottom' />
 
       <Suspense fallback={<LinearProgress />}>
         <RubyPopupContainer />

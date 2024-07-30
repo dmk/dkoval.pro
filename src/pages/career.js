@@ -5,7 +5,7 @@ import Container from '@mui/material/Container';
 import { Text } from '@/components/MainText';
 import ArrowLink from '@/components/ArrowLink';
 
-export default function Projects() {
+export default function Career() {
   return (
     <Box width='100vw' height='90vh'>
       <Head>
@@ -17,12 +17,12 @@ export default function Projects() {
 
       <Container maxWidth="sm">
         <Box mt={12}>
-          <Text variant='h4'>The Projects is in development...</Text>
+          <Text variant='h4'>The Career page is in development...</Text>
           <Text variant='body1'>Check it out later!</Text>
         </Box>
       </Container>
 
-      <ArrowLink href="/" text="Back to Homepage" placement='left' />
+      <ArrowLink href="/" text="Back to Homepage" placement='top' />
     </Box>
   );
 }
@@ -30,7 +30,7 @@ export default function Projects() {
 export const getStaticProps = async () => {
   return {
     props: {
-      transitionDirection: 'right'
+      transitionDirection: 'bottom'
     },
   };
 };

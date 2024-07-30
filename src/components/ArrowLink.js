@@ -69,12 +69,12 @@ const getPositionStyles = (placement) => {
   }
 };
 
-const ArrowLink = ({ text, placement }) => {
+const ArrowLink = ({ text, placement, href }) => {
   return (
     <Stack
       direction={getFlexDirection(placement)}
-      as={Link}
-      href='/projects'
+      as='a'
+      href={href}
       justifyContent="center"
       alignItems="center"
       spacing={.1}

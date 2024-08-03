@@ -2,10 +2,11 @@ import Head from 'next/head';
 
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import { Text } from '@/components/MainText';
 import ArrowLink from '@/components/ArrowLink';
+import ProjectList from '@/components/Projects/ProjectList';
+import { fetchGitHubData } from '@/utils/github';
 
-export default function Projects() {
+export default function Projects({ projects }) {
   return (
     <>
       <Head>
@@ -17,11 +18,11 @@ export default function Projects() {
 
       <Box
         width='100%' height='100%'
+        px={8}
       >
-        <Container maxWidth="sm">
-          <Box mt={12}>
-            <Text variant='h4'>The Projects is in development...</Text>
-            <Text variant='body1'>Check it out later!</Text>
+        <Container maxWidth="md">
+          <Box mt={8}>
+            <ProjectList projects={projects} />
           </Box>
         </Container>
 
@@ -32,8 +33,20 @@ export default function Projects() {
 }
 
 export const getStaticProps = async () => {
+  const username = 'dmk';
+  const repoNames = [
+    'fastsheet',
+    'temp-alert',
+    'jenkins-testbed',
+    'dkoval.pro',
+    'fastai-course-notebooks',
+  ];
+
+  const projects = await fetchGitHubData(username, repoNames);
+
   return {
     props: {
+      projects,
       transitionDirection: 'right'
     },
   };

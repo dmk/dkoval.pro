@@ -28,7 +28,7 @@ export default function Projects({ projects }) {
           </Box>
         </Container>
 
-        <ArrowLink href="/" text="Back to Homepage" placement='left' />
+        <ArrowLink href="/" text="Home" placement='left' />
       </Box>
     </>
   );

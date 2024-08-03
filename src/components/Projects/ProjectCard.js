@@ -17,8 +17,8 @@ const ProjectCard = ({ project }) => {
 
           <Grid container spacing={.5}>
             {Object.keys(project.languages).map((language) => (
-              <Grid item>
-                <Chip key={language} label={language} size='small' variant='filled' />
+              <Grid key={language} item>
+                <Chip label={language} size='small' variant='filled' />
               </Grid>
             ))}
           </Grid>

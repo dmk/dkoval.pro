@@ -15,7 +15,7 @@ const RubyPopupContainer = lazy(() => import('@/components/easter-eggs/RubyPopup
 
 export default function Home() {
   return (
-    <Box width='100vw' height='90vh'>
+    <Box width='100%' height='100%'>
       <Head>
         <title>Dmytro Koval | DevOps Engineer</title>
         <meta name="description" content="Welcome to my personal website. I am Dima, a DevOps Engineer

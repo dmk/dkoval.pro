@@ -17,11 +17,9 @@ export default function Projects() {
 
       <Box
         width='100%' height='100%'
-        display='flex'
-        justifyContent='center' alignItems='center'
       >
         <Container maxWidth="sm">
-          <Box mt={-28}>
+          <Box mt={12}>
             <Text variant='h4'>The Projects is in development...</Text>
             <Text variant='body1'>Check it out later!</Text>
           </Box>

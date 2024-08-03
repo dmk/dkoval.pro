@@ -4,8 +4,11 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { Text } from '@/components/MainText';
 import ArrowLink from '@/components/ArrowLink';
+import { useMediaQuery } from '@mui/material';
 
 export default function Career() {
+  const isMobile = useMediaQuery('(max-width:600px)');
+
   return (
     <>
       <Head>
@@ -25,7 +28,7 @@ export default function Career() {
           </Box>
         </Container>
 
-        <ArrowLink href="/" text="Back to Homepage" placement='top' />
+        {!isMobile && <ArrowLink href="/" text="Back to Homepage" placement='top' />}
       </Box>
     </>
   );
@@ -34,7 +37,7 @@ export default function Career() {
 export const getStaticProps = async () => {
   return {
     props: {
-      transitionDirection: 'down'
+      transitionDirection: 'right'
     },
   };
 };

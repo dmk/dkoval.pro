@@ -9,9 +9,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 import theme from '@/theme';
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import PageTransition from "@/components/PageTransition";
+import Navigation from "@/components/Navigation";
+import { useMediaQuery } from "@mui/material";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
+  const isMobile = useMediaQuery('(max-width:600px)');
   const { transitionDirection } = pageProps;
 
   useEffect(() => {
@@ -33,6 +36,8 @@ export default function App({ Component, pageProps }) {
       <PageTransition direction={transitionDirection}>
         <Component {...pageProps} />
       </PageTransition>
+
+      {isMobile && <Navigation />}
 
       <GoogleAnalytics />
     </ThemeProvider>

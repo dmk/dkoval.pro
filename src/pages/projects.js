@@ -21,7 +21,7 @@ export default function Projects() {
         justifyContent='center' alignItems='center'
       >
         <Container maxWidth="sm">
-          <Box mt={-12}>
+          <Box mt={-28}>
             <Text variant='h4'>The Projects is in development...</Text>
             <Text variant='body1'>Check it out later!</Text>
           </Box>

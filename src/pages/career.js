@@ -21,7 +21,7 @@ export default function Career() {
         justifyContent='center' alignItems='center'
       >
         <Container maxWidth="sm">
-          <Box mt={-12}>
+          <Box mt={-28}>
             <Text variant='h4'>The Career page is in development...</Text>
             <Text variant='body1'>Check it out later!</Text>
           </Box>

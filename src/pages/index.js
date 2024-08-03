@@ -30,7 +30,7 @@ export default function Home() {
       >
         <Container maxWidth="sm">
           <Suspense fallback={<MainTextRaw />}>
-            <Box mt={-12}>
+            <Box mt={-28}>
               <MainText />
             </Box>
 

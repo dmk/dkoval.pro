@@ -1,4 +1,4 @@
-const token = process.env.GITHUB_TOKEN;
+const token = process.env.NEXT_APP_GITHUB_TOKEN;
 
 const fetcher = (url) => {
   return fetch(url, {

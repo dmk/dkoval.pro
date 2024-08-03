@@ -18,10 +18,12 @@ export default function Projects({ projects }) {
 
       <Box
         width='100%' height='100%'
+        display='flex'
+        justifyContent='center' alignItems='center'
         px={8}
       >
-        <Container maxWidth="md">
-          <Box mt={8}>
+        <Container maxWidth="lg" sx={{height: "100%"}}>
+          <Box mt={4} height='100%'>
             <ProjectList projects={projects} />
           </Box>
         </Container>

@@ -1,15 +1,16 @@
-import { Grid } from '@mui/material';
+import { Box, Grid } from '@mui/material';
+import Masonry from '@mui/lab/Masonry';
 import ProjectCard from './ProjectCard';
 
 const ProjectList = ({ projects }) => {
   return (
-    <Grid container spacing={3}>
-      {projects.map((project) => (
-        <Grid item xs={12} sm={6} md={4} key={project.id}>
-          <ProjectCard project={project} />
-        </Grid>
-      ))}
-    </Grid>
+    <Box sx={{ overflowY: 'auto', px: 1, py: .5, maxHeight: '95vh' }}>
+      <Masonry columns={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }} spacing={3}>
+        {projects.map((project) => (
+          <ProjectCard project={project} key={project.id} />
+        ))}
+      </Masonry>
+    </Box>
   );
 };
 

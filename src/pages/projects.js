@@ -22,8 +22,8 @@ export default function Projects({ projects }) {
         justifyContent='center' alignItems='center'
         px={8}
       >
-        <Container maxWidth="lg" sx={{height: "100%"}}>
-          <Box mt={4} height='100%'>
+        <Container maxWidth="lg">
+          <Box pt={4}>
             <ProjectList projects={projects} />
           </Box>
         </Container>

@@ -8,6 +8,7 @@ import Paper from '@mui/material/Paper';
 import HomeIcon from '@mui/icons-material/Home';
 import CodeIcon from '@mui/icons-material/Code';
 import WorkIcon from '@mui/icons-material/Work';
+import PetsIcon from '@mui/icons-material/Pets';
 
 const Navigation = () => {
   const router = useRouter();
@@ -42,6 +43,11 @@ const Navigation = () => {
         <BottomNavigationAction
           label="Career" icon={<WorkIcon />}
           value="/career" href="/career"
+          component='a'
+        />
+        <BottomNavigationAction
+          label="Cats" icon={<PetsIcon />}
+          value="/cats" href="/cats"
           component='a'
         />
       </BottomNavigation>

@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 
 import { useRouter } from 'next/router';
 
-import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import Paper from '@mui/material/Paper';
 import HomeIcon from '@mui/icons-material/Home';
 import CodeIcon from '@mui/icons-material/Code';
 import WorkIcon from '@mui/icons-material/Work';

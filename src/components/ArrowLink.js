@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Stack } from '@mui/system';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
-import Link from 'next/link';
 
 const arrowVariants = {
   initial: { scaleY: 1 },

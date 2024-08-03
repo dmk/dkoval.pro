@@ -1,4 +1,11 @@
-import { Card, CardContent, Typography, CardActions, Button, Chip, Grid, Stack } from '@mui/material';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import CardActions from '@mui/material/CardActions';
+import Button from '@mui/material/Button';
+import Chip from '@mui/material/Chip';
+import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
 
 const ProjectCard = ({ project }) => {
   return (

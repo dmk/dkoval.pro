@@ -1,4 +1,3 @@
-import { Box, Grid } from '@mui/material';
 import Masonry from '@mui/lab/Masonry';
 import ProjectCard from './ProjectCard';
 

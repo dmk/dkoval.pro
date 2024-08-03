@@ -44,7 +44,7 @@ export default function Home() {
         {!isMobile && (<>
           <ArrowLink href="/projects" text="Projects" placement='right' />
           <ArrowLink href="/career" text="Career" placement='bottom' />
-          <ArrowLink href="/cat-gallery" text="Cats" placement='top' />
+          <ArrowLink href="/cats" text="Cats" placement='top' />
         </>)}
 
         <Suspense fallback={<LinearProgress />}>

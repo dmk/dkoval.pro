@@ -15,33 +15,39 @@ const RubyPopupContainer = lazy(() => import('@/components/easter-eggs/RubyPopup
 
 export default function Home() {
   return (
-    <Box width='100%' height='100%'>
+    <>
       <Head>
         <title>Dmytro Koval | DevOps Engineer</title>
         <meta name="description" content="Welcome to my personal website. I am Dima, a DevOps Engineer
-        based in Kyiv, Ukraine. I work in game development, am passionate about automation,
-        and enjoy web development for fun. Connect with me on GitHub, LinkedIn, and Twitter." />
+      based in Kyiv, Ukraine. I work in game development, am passionate about automation,
+      and enjoy web development for fun. Connect with me on GitHub, LinkedIn, and Twitter." />
       </Head>
 
-      <Container maxWidth="sm">
-        <Suspense fallback={<MainTextRaw />}>
-          <Box mt={12}>
-            <MainText />
-          </Box>
+      <Box
+        width='100%' height='100%'
+        display='flex'
+        justifyContent='center' alignItems='center'
+      >
+        <Container maxWidth="sm">
+          <Suspense fallback={<MainTextRaw />}>
+            <Box mt={-12}>
+              <MainText />
+            </Box>
 
-          <Box mt={2}>
-            <Links />
-          </Box>
+            <Box mt={2}>
+              <Links />
+            </Box>
+          </Suspense>
+        </Container>
+
+        <ArrowLink href="/projects" text="Projects" placement='right' />
+        <ArrowLink href="/career" text="Career" placement='bottom' />
+
+        <Suspense fallback={<LinearProgress />}>
+          <RubyPopupContainer />
         </Suspense>
-      </Container>
-
-      <ArrowLink href="/projects" text="Projects" placement='right' />
-      <ArrowLink href="/career" text="Career" placement='bottom' />
-
-      <Suspense fallback={<LinearProgress />}>
-        <RubyPopupContainer />
-      </Suspense>
-    </Box>
+      </Box>
+    </>
   );
 }
 

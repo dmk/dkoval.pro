@@ -23,7 +23,7 @@ const PageTransition = ({ children, direction }) => {
         animate="enter"
         exit="exit"
         variants={variants}
-        transition={{ type: 'easeIn', duration: .4 }}
+        transition={{ type: 'spring', duration: 1 }}
         style={{ position: 'absolute', width: '100%', height: '100%' }}
       >
         {children}

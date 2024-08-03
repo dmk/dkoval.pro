@@ -7,7 +7,7 @@ import ArrowLink from '@/components/ArrowLink';
 
 export default function Projects() {
   return (
-    <Box width='100%' height='100%'>
+    <>
       <Head>
         <title>Dmytro Koval | DevOps Engineer | Projects</title>
         <meta name="description" content="Welcome to my personal website. I am Dima, a DevOps Engineer
@@ -15,15 +15,21 @@ export default function Projects() {
         and enjoy web development for fun. Connect with me on GitHub, LinkedIn, and Twitter." />
       </Head>
 
-      <Container maxWidth="sm">
-        <Box mt={12}>
-          <Text variant='h4'>The Projects is in development...</Text>
-          <Text variant='body1'>Check it out later!</Text>
-        </Box>
-      </Container>
+      <Box
+        width='100%' height='100%'
+        display='flex'
+        justifyContent='center' alignItems='center'
+      >
+        <Container maxWidth="sm">
+          <Box mt={-12}>
+            <Text variant='h4'>The Projects is in development...</Text>
+            <Text variant='body1'>Check it out later!</Text>
+          </Box>
+        </Container>
 
-      <ArrowLink href="/" text="Back to Homepage" placement='left' />
-    </Box>
+        <ArrowLink href="/" text="Back to Homepage" placement='left' />
+      </Box>
+    </>
   );
 }
 

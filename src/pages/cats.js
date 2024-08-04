@@ -2,9 +2,14 @@ import Head from 'next/head';
 
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import { useMediaQuery } from '@mui/material';
+
 import PhotoGallery from '@/components/CatGallery/PhotoGallery';
+import { Text } from '@/components/MainText';
 
 export default function Cats() {
+  const isMobile = useMediaQuery('(max-width:600px)');
+
   return (
     <>
       <Head>
@@ -15,14 +20,21 @@ export default function Cats() {
       </Head>
 
       <Box
-        display='flex'
-        justifyContent='center' alignItems='center'
-        pb={8} px={8}
+        sx={{
+          mt: 4,
+          pb: isMobile ? 8 : 0,
+          px: isMobile ? 0 : 8,
+        }}
       >
-        <Container maxWidth="lg">
-          <Box pt={4}>
-            <PhotoGallery />
-          </Box>
+        <Container
+          maxWidth="lg"
+          display='flex' justifyContent='center'
+          alignItems='center'
+        >
+          <Text variant='h4' align='center' fontWeight={600} gutterBottom>
+            My Cats
+          </Text>
+          <PhotoGallery />
         </Container>
       </Box>
     </>

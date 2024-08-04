@@ -1,14 +1,11 @@
-// components/PhotoCard.js
-import React from 'react';
-import { Paper } from '@mui/material';
+import Paper from '@mui/material/Paper';
 
 const PhotoCard = ({ image }) => {
   return (
     <Paper
-      elevation={4}
+      elevation={6}
       sx={{
-        borderRadius: 4,
-        maxWidth: 256
+        borderRadius: 4
       }}
     >
       <img

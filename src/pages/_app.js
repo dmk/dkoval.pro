@@ -33,9 +33,7 @@ export default function App({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
-      <PageTransition direction={transitionDirection}>
-        <Component {...pageProps} />
-      </PageTransition>
+      <Component {...pageProps} />
 
       <Navigation />
 

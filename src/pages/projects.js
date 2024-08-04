@@ -2,10 +2,16 @@ import Head from 'next/head';
 
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import { useMediaQuery } from '@mui/material';
+
 import ProjectList from '@/components/Projects/ProjectList';
+import { Text } from '@/components/MainText';
+
 import { fetchGitHubData } from '@/utils/github';
 
 export default function Projects({ projects }) {
+  const isMobile = useMediaQuery('(max-width:600px)');
+
   return (
     <>
       <Head>
@@ -16,14 +22,20 @@ export default function Projects({ projects }) {
       </Head>
 
       <Box
-        display='flex'
-        justifyContent='center' alignItems='center'
-        pb={8}
+        sx={{
+          mt: 4,
+          pb: isMobile ? 8 : 0,
+          px: isMobile ? 0 : 8,
+        }}
       >
-        <Container maxWidth="lg">
-          <Box pt={4}>
-            <ProjectList projects={projects} />
-          </Box>
+        <Container
+          maxWidth="lg"
+          display='flex' justifyContent='center' alignItems='center'
+        >
+          <Text variant='h4' align='center' fontWeight={600} gutterBottom>
+            My Open-source Projects
+          </Text>
+          <ProjectList projects={projects} />
         </Container>
       </Box>
     </>

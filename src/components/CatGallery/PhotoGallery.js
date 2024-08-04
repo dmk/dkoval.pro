@@ -1,7 +1,10 @@
 import Masonry from '@mui/lab/Masonry';
+
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+
 import PhotoCard from './PhotoCard';
 import images from '@/assets/images.json';
-import { Box, Container } from '@mui/material';
 
 const PhotoGallery = () => {
   return (

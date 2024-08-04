@@ -37,7 +37,7 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
       </PageTransition>
 
-      {isMobile && <Navigation />}
+      <Navigation />
 
       <GoogleAnalytics />
     </ThemeProvider>

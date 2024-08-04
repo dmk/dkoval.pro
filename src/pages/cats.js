@@ -2,13 +2,9 @@ import Head from 'next/head';
 
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import ArrowLink from '@/components/ArrowLink';
 import PhotoGallery from '@/components/CatGallery/PhotoGallery';
-import { useMediaQuery } from '@mui/material';
 
 export default function Cats() {
-  const isMobile = useMediaQuery('(max-width:600px)');
-
   return (
     <>
       <Head>
@@ -21,16 +17,22 @@ export default function Cats() {
       <Box
         display='flex'
         justifyContent='center' alignItems='center'
-        pb={8}
+        pb={8} px={8}
       >
         <Container maxWidth="lg">
           <Box pt={4}>
             <PhotoGallery />
           </Box>
         </Container>
-
-        {!isMobile && <ArrowLink href="/" text="Home" placement='bottom' />}
       </Box>
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  return {
+    props: {
+      transitionDirection: 'right'
+    },
+  };
+};

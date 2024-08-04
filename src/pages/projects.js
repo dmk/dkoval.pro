@@ -2,14 +2,10 @@ import Head from 'next/head';
 
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import ArrowLink from '@/components/ArrowLink';
 import ProjectList from '@/components/Projects/ProjectList';
 import { fetchGitHubData } from '@/utils/github';
-import { useMediaQuery } from '@mui/material';
 
 export default function Projects({ projects }) {
-  const isMobile = useMediaQuery('(max-width:600px)');
-
   return (
     <>
       <Head>
@@ -29,8 +25,6 @@ export default function Projects({ projects }) {
             <ProjectList projects={projects} />
           </Box>
         </Container>
-
-        {!isMobile && <ArrowLink href="/" text="Home" placement='left' />}
       </Box>
     </>
   );

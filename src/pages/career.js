@@ -3,12 +3,8 @@ import Head from 'next/head';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { Text } from '@/components/MainText';
-import ArrowLink from '@/components/ArrowLink';
-import { useMediaQuery } from '@mui/material';
 
 export default function Career() {
-  const isMobile = useMediaQuery('(max-width:600px)');
-
   return (
     <>
       <Head>
@@ -27,8 +23,6 @@ export default function Career() {
             <Text variant='body1'>Check it out later!</Text>
           </Box>
         </Container>
-
-        {!isMobile && <ArrowLink href="/" text="Back to Homepage" placement='top' />}
       </Box>
     </>
   );

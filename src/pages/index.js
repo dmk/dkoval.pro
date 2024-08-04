@@ -7,16 +7,12 @@ import Container from '@mui/material/Container';
 import LinearProgress from '@mui/material/LinearProgress';
 
 import { MainTextRaw } from "@/components/MainText";
-import ArrowLink from '@/components/ArrowLink';
-import { useMediaQuery } from '@mui/material';
 
 const MainText = lazy(() => import("@/components/MainText"));
 const Links = lazy(() => import("@/components/Links"));
 const RubyPopupContainer = lazy(() => import('@/components/easter-eggs/RubyPopup'));
 
 export default function Home() {
-  const isMobile = useMediaQuery('(max-width:600px)');
-
   return (
     <>
       <Head>
@@ -40,12 +36,6 @@ export default function Home() {
             </Box>
           </Suspense>
         </Container>
-
-        {!isMobile && (<>
-          <ArrowLink href="/projects" text="Projects" placement='right' />
-          <ArrowLink href="/career" text="Career" placement='bottom' />
-          <ArrowLink href="/cats" text="Cats" placement='top' />
-        </>)}
 
         <Suspense fallback={<LinearProgress />}>
           <RubyPopupContainer />

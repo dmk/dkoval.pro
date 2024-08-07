@@ -21,21 +21,17 @@ export default function Cats() {
 
       <Box
         sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
           mt: 4,
-          pb: isMobile ? 8 : 0,
-          px: isMobile ? 0 : 8,
         }}
       >
-        <Container
-          maxWidth="lg"
-          display='flex' justifyContent='center'
-          alignItems='center'
-        >
-          <Text variant='h4' align='center' fontWeight={600} gutterBottom>
-            My Cats
-          </Text>
-          <PhotoGallery />
-        </Container>
+        <Text variant='h4' align='center' fontWeight={600} gutterBottom>
+          My Cats
+        </Text>
+        <PhotoGallery />
       </Box>
     </>
   );

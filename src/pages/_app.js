@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from 'next/router';
 
 import { ThemeProvider } from '@mui/material/styles';
+import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import theme from '@/theme';
@@ -33,7 +34,12 @@ export default function App({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
-      <Component {...pageProps} />
+      <Box sx={{
+        mb: isMobile ? 10 : 0,
+        ml: isMobile ? 0 : 10,
+      }}>
+        <Component {...pageProps} />
+      </Box>
 
       <Navigation />
 

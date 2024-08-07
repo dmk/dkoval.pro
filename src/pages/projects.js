@@ -23,20 +23,24 @@ export default function Projects({ projects }) {
 
       <Box
         sx={{
+          width: '100%',
           mt: 4,
-          pb: isMobile ? 8 : 0,
-          px: isMobile ? 0 : 8,
+          px: 2,
         }}
       >
-        <Container
-          maxWidth="lg"
-          display='flex' justifyContent='center' alignItems='center'
+        <Text variant='h4' align='center' fontWeight={600} gutterBottom>
+          My Open-source Projects
+        </Text>
+
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
         >
-          <Text variant='h4' align='center' fontWeight={600} gutterBottom>
-            My Open-source Projects
-          </Text>
           <ProjectList projects={projects} />
-        </Container>
+        </Box>
       </Box>
     </>
   );

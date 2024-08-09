@@ -63,5 +63,30 @@
     "thumbnail": "/images/cats/thumbnails/ruby-8-thumb.avif",
     "fullSize": "/images/cats/fullsize/ruby-8.avif",
     "name": "Ruby"
+  },
+  {
+    "thumbnail": "/images/cats/thumbnails/lulu-6-thumb.avif",
+    "fullSize": "/images/cats/fullsize/lulu-6.avif",
+    "name": "Lulu"
+  },
+  {
+    "thumbnail": "/images/cats/thumbnails/lulu-7-thumb.avif",
+    "fullSize": "/images/cats/fullsize/lulu-7.avif",
+    "name": "Lulu"
+  },
+  {
+    "thumbnail": "/images/cats/thumbnails/lulu-8-thumb.avif",
+    "fullSize": "/images/cats/fullsize/lulu-8.avif",
+    "name": "Lulu"
+  },
+  {
+    "thumbnail": "/images/cats/thumbnails/ruby-9-thumb.avif",
+    "fullSize": "/images/cats/fullsize/ruby-9.avif",
+    "name": "Ruby"
+  },
+  {
+    "thumbnail": "/images/cats/thumbnails/ruby-10-thumb.avif",
+    "fullSize": "/images/cats/fullsize/ruby-10.avif",
+    "name": "Ruby"
   }
 ]

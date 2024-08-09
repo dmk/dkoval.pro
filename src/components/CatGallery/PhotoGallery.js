@@ -11,7 +11,7 @@ const PhotoGallery = () => {
     <Box width='100%' display='flex' alignItems='center'>
       <Container maxWidth='lg'>
         <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={3}>
-          {images.map((image, index) => (
+          {images.reverse().map((image, index) => (
             <PhotoCard key={index} image={image} />
           ))}
         </Masonry>

@@ -58,7 +58,7 @@ const Navigation = () => {
           onClick={() => router.push(item.href)}
           className={`flex items-center justify-center p-3 rounded-full transition-all w-12 h-12 
                       ${item.href === value ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'}
-                      hover:bg-green-400 hover:text-white shadow-sm duration-300`}
+                      hover:bg-green-500 hover:text-white shadow-sm duration-300`}
         >
           {item.icon}
         </button>

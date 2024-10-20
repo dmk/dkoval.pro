@@ -11,7 +11,7 @@ export default function Career() {
       </Head>
 
       <div className="w-full h-full">
-        <div className="max-w-md mx-auto mt-16 md:mt-32">
+        <div className="max-w-lg mx-auto mt-16 md:mt-32 px-8">
           <h4 className="text-2xl font-bold mb-4">The Career page is in development...</h4>
           <p className="text-lg">Check it out later!</p>
         </div>

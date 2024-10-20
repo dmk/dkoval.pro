@@ -19,7 +19,7 @@ export function MainTextRaw() {
 
 export default function MainText() {
   return (
-    <>
+    <div className="px-8">
       <h1 className={`${main.className} text-[1.9rem] text-slate-800 font-semibold mb-4`}>
         Hi, I&apos;m&nbsp;
         <span className={`${highlighted.className} text-green-600 text-[2rem]`}>Dmytro</span>, a DevOps Engineer from&nbsp;
@@ -30,6 +30,6 @@ export default function MainText() {
       <p className={`${main.className} text-lg mb-4`}>
         I work in gamedev, passionate about automation, and enjoy doing web development for fun.
       </p>
-    </>
+    </div>
   );
 }

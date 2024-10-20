@@ -12,6 +12,7 @@ module.exports = {
         foreground: "var(--foreground)",
       },
       scale: {
+        '102': '1.02',
         '103': '1.03',
       },
     },

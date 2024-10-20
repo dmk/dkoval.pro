@@ -1,22 +1,19 @@
-import Masonry from '@mui/lab/Masonry';
-
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-
 import PhotoCard from './PhotoCard';
 import images from '@/assets/images.json';
 
 const PhotoGallery = () => {
   return (
-    <Box width='100%' display='flex' alignItems='center'>
-      <Container maxWidth='lg'>
-        <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={3}>
+    <div className="w-full flex items-center">
+      <div className="max-w-6xl mx-auto">
+        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 py-6">
           {images.reverse().map((image, index) => (
-            <PhotoCard key={index} image={image} />
+            <div key={index} className="mb-6 break-inside-avoid overflow-visible">
+              <PhotoCard image={image} />
+            </div>
           ))}
-        </Masonry>
-      </Container>
-    </Box>
+        </div>
+      </div>
+    </div>
   );
 };
 

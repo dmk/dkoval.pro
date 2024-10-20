@@ -1,9 +1,5 @@
 import Head from 'next/head';
 
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import { Text } from '@/components/MainText';
-
 export default function Career() {
   return (
     <>
@@ -14,24 +10,12 @@ export default function Career() {
         and enjoy web development for fun. Connect with me on GitHub, LinkedIn, and Twitter." />
       </Head>
 
-      <Box
-        width='100%' height='100%'
-      >
-        <Container maxWidth="sm">
-          <Box mt={12}>
-            <Text variant='h4'>The Career page is in development...</Text>
-            <Text variant='body1'>Check it out later!</Text>
-          </Box>
-        </Container>
-      </Box>
+      <div className="w-full h-full">
+        <div className="max-w-md mx-auto mt-16 md:mt-32">
+          <h4 className="text-2xl font-bold mb-4">The Career page is in development...</h4>
+          <p className="text-lg">Check it out later!</p>
+        </div>
+      </div>
     </>
   );
 }
-
-export const getStaticProps = async () => {
-  return {
-    props: {
-      transitionDirection: 'right'
-    },
-  };
-};

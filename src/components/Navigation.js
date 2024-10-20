@@ -1,100 +1,70 @@
-  import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
-  import { useRouter } from 'next/router';
+import HomeIcon from '@mui/icons-material/Home';
+import CodeIcon from '@mui/icons-material/Code';
+import WorkIcon from '@mui/icons-material/Work';
+import PetsIcon from '@mui/icons-material/Pets';
 
-  import BottomNavigation from '@mui/material/BottomNavigation';
-  import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-  import Paper from '@mui/material/Paper';
-  import Drawer from '@mui/material/Drawer';
-  import List from '@mui/material/List';
-  import ListItem from '@mui/material/ListItem';
-  import {  useMediaQuery } from '@mui/material';
+const navItems = [
+  {
+    label: "Home",
+    href: "/",
+    icon: <HomeIcon className="w-6 h-6" />,  
+  },
+  {
+    label: "Projects",
+    href: "/projects",
+    icon: <CodeIcon className="w-6 h-6" />,  
+  },
+  {
+    label: "Career",
+    href: "/career",
+    icon: <WorkIcon className="w-6 h-6" />,  
+  },
+  {
+    label: "Cats",
+    href: "/cats",
+    icon: <PetsIcon className="w-6 h-6" />,  
+  },
+];
 
-  import HomeIcon from '@mui/icons-material/Home';
-  import CodeIcon from '@mui/icons-material/Code';
-  import WorkIcon from '@mui/icons-material/Work';
-  import PetsIcon from '@mui/icons-material/Pets';
+const Navigation = () => {
+  const router = useRouter();
+  const [value, setValue] = useState(router.pathname);
 
-  const navItems = [
-    {
-      label: "Home",
-      href: "/",
-      icon: <HomeIcon />,
-    },
-    {
-      label: "Projects",
-      href: "/projects",
-      icon: <CodeIcon />,
-    },
-    {
-      label: "Career",
-      href: "/career",
-      icon: <WorkIcon />,
-    },
-    {
-      label: "Cats",
-      href: "/cats",
-      icon: <PetsIcon />,
-    },
-  ]
+  useEffect(() => {
+    setValue(router.pathname);
+  }, [router.pathname]);
 
-  const Navigation = () => {
-    const router = useRouter();
-    const isMobile = useMediaQuery('(max-width:600px)');
-    const [value, setValue] = useState(router.pathname);
-
-    useEffect(() => {
-      setValue(router.pathname);
-    }, [router.pathname]);
-
-    return (
-      isMobile ? (
-        <Paper
-          elevation={4}
-          sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}
+  return (
+    <nav
+      className="
+        fixed 
+        bg-white 
+        rounded-full 
+        shadow-md 
+        p-3 
+        flex 
+        space-x-4 
+        transition-all
+        bottom-4 left-1/2 transform -translate-x-1/2
+        md:bottom-auto md:left-4 md:top-32 md:-translate-y-1/3 md:translate-x-0 md:flex-col md:space-x-0 md:space-y-3
+      "
+    >
+      {navItems.map(item => (
+        <button
+          key={item.label}
+          onClick={() => router.push(item.href)}
+          className={`flex items-center justify-center p-3 rounded-full transition-all w-12 h-12 
+                      ${item.href === value ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'}
+                      hover:bg-green-400 hover:text-white shadow-sm duration-300`}
         >
-          <BottomNavigation
-            value={value}
-            onChange={(_, newValue) => {
-              setValue(newValue);
-            }}
-            showLabels
-          >
-            {navItems.map(item => (
-              <BottomNavigationAction
-                {...item} value={item.href}
-                component='a' key={item.label}
-              />
-            ))}
-          </BottomNavigation>
-        </Paper>
-      ) : (
-        <Paper elevation={4}>
-          <Drawer variant="permanent" open={false}>
-            <List>
-              {navItems.map(item => (
-                <ListItem
-                  key={item.label}
-                  disablePadding
-                  sx={{ display: 'block' }}
-                >
-                  <BottomNavigationAction
-                    {...item} value={item.href}
-                    component='a'
-                    sx={{
-                      color: item.href === value ? 'primary.main' : 'primary.background',
-                      '& .MuiBottomNavigationAction-label': {
-                        opacity: 1
-                      }
-                    }}
-                  />
-                </ListItem>
-              ))}
-            </List>
-          </Drawer>
-        </Paper>
-      )
-    );
-  };
+          {item.icon}
+        </button>
+      ))}
+    </nav>
+  );
+};
 
-  export default Navigation;
+export default Navigation;

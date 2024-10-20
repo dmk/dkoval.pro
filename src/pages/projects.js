@@ -1,17 +1,9 @@
 import Head from 'next/head';
 
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import { useMediaQuery } from '@mui/material';
-
 import ProjectList from '@/components/Projects/ProjectList';
-import { Text } from '@/components/MainText';
-
 import { fetchGitHubData } from '@/utils/github';
 
 export default function Projects({ projects }) {
-  const isMobile = useMediaQuery('(max-width:600px)');
-
   return (
     <>
       <Head>
@@ -21,27 +13,14 @@ export default function Projects({ projects }) {
         and enjoy web development for fun. Connect with me on GitHub, LinkedIn, and Twitter." />
       </Head>
 
-      <Box
-        sx={{
-          width: '100%',
-          mt: 4,
-          px: 2,
-        }}
-      >
-        <Text variant='h4' align='center' fontWeight={600} gutterBottom>
-          My Open-source Projects
-        </Text>
-
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
-        >
-          <ProjectList projects={projects} />
-        </Box>
-      </Box>
+      <div className="w-full mt-4 px-2">
+        <h2 className="text-2xl font-bold text-center my-6">Open-Source Projects</h2>
+        <div className="flex justify-center items-center">
+          <div className="max-w-screen-lg">
+            <ProjectList projects={projects} />
+          </div>
+        </div>
+      </div>
     </>
   );
 }
@@ -50,10 +29,10 @@ export const getStaticProps = async () => {
   const username = 'dmk';
   const repoNames = [
     'fastsheet',
-    'temp-alert',
     'jenkins-testbed',
     'dkoval.pro',
     'fastai-course-notebooks',
+    'temp-alert',
   ];
 
   const projects = await fetchGitHubData(username, repoNames);
@@ -61,7 +40,6 @@ export const getStaticProps = async () => {
   return {
     props: {
       projects,
-      transitionDirection: 'right'
     },
   };
 };

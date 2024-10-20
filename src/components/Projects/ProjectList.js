@@ -1,13 +1,16 @@
-import Masonry from '@mui/lab/Masonry';
 import ProjectCard from './ProjectCard';
 
 const ProjectList = ({ projects }) => {
   return (
-    <Masonry columns={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }} spacing={2}>
-      {projects.map((project) => (
-        <ProjectCard project={project} key={project.id} />
-      ))}
-    </Masonry>
+    <div className="px-6">
+      <div className="columns-1 md:columns-2 xl:columns-3 gap-6">
+        {projects.map((project) => (
+          <div key={project.id} className="break-inside-avoid">
+            <ProjectCard project={project} />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

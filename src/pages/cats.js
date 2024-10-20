@@ -1,15 +1,8 @@
 import Head from 'next/head';
 
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import { useMediaQuery } from '@mui/material';
-
 import PhotoGallery from '@/components/CatGallery/PhotoGallery';
-import { Text } from '@/components/MainText';
 
 export default function Cats() {
-  const isMobile = useMediaQuery('(max-width:600px)');
-
   return (
     <>
       <Head>
@@ -19,28 +12,15 @@ export default function Cats() {
         and enjoy web development for fun. Connect with me on GitHub, LinkedIn, and Twitter." />
       </Head>
 
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
-          mt: 4,
-        }}
-      >
-        <Text variant='h4' align='center' fontWeight={600} gutterBottom>
-          My Cats
-        </Text>
-        <PhotoGallery />
-      </Box>
+      <div className="w-full mt-4 px-2">
+        <h4 className="text-2xl font-bold text-center my-6">My Cats</h4>
+
+        <div className="w-full flex justify-center items-center">
+          <div className="max-w-screen-lg">
+            <PhotoGallery />
+          </div>
+        </div>
+      </div>
     </>
   );
 }
-
-export const getStaticProps = async () => {
-  return {
-    props: {
-      transitionDirection: 'right'
-    },
-  };
-};

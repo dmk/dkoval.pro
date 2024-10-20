@@ -1,43 +1,43 @@
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import CardActions from '@mui/material/CardActions';
-import Button from '@mui/material/Button';
-import Chip from '@mui/material/Chip';
-import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import StarRateRoundedIcon from '@mui/icons-material/StarRateRounded';
+
 
 const ProjectCard = ({ project }) => {
   return (
-    <Card elevation={3}>
-      <CardContent>
-        <Stack spacing={.5}>
-          <Typography variant="h5" component="div">
-            {project.name}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {project.description}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Stars: {project.stargazers_count} | Forks: {project.forks_count}
-          </Typography>
-
-          <Grid container spacing={.5}>
-            {Object.keys(project.languages).map((language) => (
-              <Grid key={language} item>
-                <Chip label={language} size='small' variant='filled' />
-              </Grid>
-            ))}
-          </Grid>
-        </Stack>
-      </CardContent>
-
-      <CardActions>
-        <Button size="small" href={project.html_url} target="_blank" rel="noopener noreferrer">
-          View on GitHub
-        </Button>
-      </CardActions>
-    </Card>
+    <div className="bg-white shadow-md rounded-lg p-4 mb-6">
+      <div className="mb-4">
+        <h5 className="text-xl font-bold mb-1">{project.name}</h5>
+        <p className="text-sm text-gray-600 mb-1">{project.description}</p>
+        <div className="flex flex-wrap gap-2 mt-2">
+          {Object.keys(project.languages).map((language) => (
+            <span key={language} className="bg-gray-200 text-gray-800 text-xs font-semibold px-2 py-1 rounded">
+              {language}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1">
+            <StarRateRoundedIcon sx={{mt: -.3}} />
+            {project.stargazers_count}
+          </div>
+          <div className="flex items-center gap-1">
+            <RestaurantIcon fontSize='small' />
+            {project.forks_count}
+          </div>
+        </div>
+        <a
+          href={project.html_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-green-600 transition-colors"
+        >
+          <GitHubIcon />
+        </a>
+      </div>
+    </div>
   );
 };
 

@@ -9,14 +9,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import theme from '@/theme';
 import GoogleAnalytics from "@/components/GoogleAnalytics";
-import PageTransition from "@/components/PageTransition";
 import Navigation from "@/components/Navigation";
 import { useMediaQuery } from "@mui/material";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  const isMobile = useMediaQuery('(max-width:600px)');
-  const { transitionDirection } = pageProps;
+  const isMobile = useMediaQuery('(max-width:768px)');
 
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -31,12 +29,10 @@ export default function App({ Component, pageProps }) {
   }, [router.events]);
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-
+    <>
       <Box sx={{
-        mb: isMobile ? 10 : 0,
-        ml: isMobile ? 0 : 10,
+        mb: isMobile ? 12 : 0,
+        ml: isMobile ? 0 : 12,
       }}>
         <Component {...pageProps} />
       </Box>
@@ -44,6 +40,6 @@ export default function App({ Component, pageProps }) {
       <Navigation />
 
       <GoogleAnalytics />
-    </ThemeProvider>
+    </>
   );
 }

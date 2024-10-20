@@ -1,16 +1,13 @@
-import { lazy, Suspense } from 'react';
-
 import Head from 'next/head';
 
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import LinearProgress from '@mui/material/LinearProgress';
+import MainText from '@/components/MainText';
+import Links from '@/components/Links';
 
-import { MainTextRaw } from "@/components/MainText";
-
-const MainText = lazy(() => import("@/components/MainText"));
-const Links = lazy(() => import("@/components/Links"));
-const RubyPopupContainer = lazy(() => import('@/components/easter-eggs/RubyPopup'));
+// TODO: this is for the future.
+// import { MainTextRaw } from "@/components/MainText";
+// const MainText = lazy(() => import("@/components/MainText"));
+// const Links = lazy(() => import("@/components/Links"));
+// const RubyPopupContainer = lazy(() => import('@/components/easter-eggs/RubyPopup'));
 
 export default function Home() {
   return (
@@ -22,33 +19,15 @@ export default function Home() {
       and enjoy web development for fun. Connect with me on GitHub, LinkedIn, and Twitter." />
       </Head>
 
-      <Box
-        width='100%' height='100%'
-      >
-        <Container maxWidth="sm">
-          <Suspense fallback={<MainTextRaw />}>
-            <Box pt={12}>
-              <MainText />
-            </Box>
+      <div className="w-full h-full">
+        <div className="max-w-lg mx-auto mt-16 md:mt-32">
+          <MainText />
+        </div>
 
-            <Box mt={2}>
-              <Links />
-            </Box>
-          </Suspense>
-        </Container>
-
-        <Suspense fallback={<LinearProgress />}>
-          <RubyPopupContainer />
-        </Suspense>
-      </Box>
+        <div className="mt-4">
+          <Links />
+        </div>
+      </div>
     </>
   );
 }
-
-export const getStaticProps = async () => {
-  return {
-    props: {
-      transitionDirection: 'right'
-    },
-  };
-};

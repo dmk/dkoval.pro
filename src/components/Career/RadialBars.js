@@ -49,13 +49,7 @@ export default function RadialBars({ data, width, height, showControls = true })
     [innerRadius, radiusMax],
   );
 
-  return width < 500 ? (
-    <div className="flex items-center justify-center">
-      <p className="text-lg text-gray-700 font-semibold">
-        Please switch to a larger screen to view this content.
-      </p>
-    </div>
-  ) : (
+  return (width < 500 || height < 500) ? null : (
     <>
       <svg width={width} height={height}>
         <Group top={yMax / 2 + margin.top} left={xMax / 2 + margin.left}>

@@ -5,6 +5,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import CodeIcon from '@mui/icons-material/Code';
 import WorkIcon from '@mui/icons-material/Work';
 import PetsIcon from '@mui/icons-material/Pets';
+import MapIcon from '@mui/icons-material/Map';
 
 const navItems = [
   {
@@ -26,6 +27,11 @@ const navItems = [
     label: "Cats",
     href: "/cats",
     icon: <PetsIcon className="w-6 h-6" />,  
+  },
+  {
+    label: "Map",
+    href: "/map",
+    icon: <MapIcon className="w-6 h-6" />,  
   },
 ];
 

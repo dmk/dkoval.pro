@@ -1,0 +1,184 @@
+{
+  "years": [
+    {
+      "year": "2016",
+      "technologies": [
+        {
+          "name": "Ruby",
+          "experience_level": 6,
+          "category": "programming-languages"
+        },
+        {
+          "name": "C",
+          "experience_level": 3,
+          "category": "programming-languages"
+        },
+        {
+          "name": "JavaScript",
+          "experience_level": 6,
+          "category": "programming-languages"
+        },
+        {
+          "name": "JQuery",
+          "experience_level": 4,
+          "category": "frameworks"
+        },
+        {
+          "name": "Ruby on Rails",
+          "experience_level": 6,
+          "category": "frameworks"
+        },
+        {
+          "name": "AngularJS",
+          "experience_level": 4,
+          "category": "frameworks"
+        },
+        {
+          "name": "Docker",
+          "experience_level": 5,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Kubernetes",
+          "experience_level": 3,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Helm",
+          "experience_level": 2,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Linux",
+          "experience_level": 5,
+          "category": "operating-systems"
+        },
+        {
+          "name": "Elasticsearch",
+          "experience_level": 2,
+          "category": "monitoring"
+        },
+        {
+          "name": "Jenkins",
+          "experience_level": 2,
+          "category": "automation"
+        }
+      ]
+    },
+    {
+      "year": "2017",
+      "technologies": [
+        {
+          "name": "Ruby",
+          "experience_level": 8,
+          "category": "programming-languages"
+        },
+        {
+          "name": "Rust",
+          "experience_level": 3,
+          "category": "programming-languages"
+        },
+        {
+          "name": "JavaScript",
+          "experience_level": 7,
+          "category": "programming-languages"
+        },
+        {
+          "name": "JQuery",
+          "experience_level": 5,
+          "category": "frameworks"
+        },
+        {
+          "name": "Ruby on Rails",
+          "experience_level": 6,
+          "category": "frameworks"
+        },
+        {
+          "name": "AngularJS",
+          "experience_level": 5,
+          "category": "frameworks"
+        },
+        {
+          "name": "Docker",
+          "experience_level": 6,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Kubernetes",
+          "experience_level": 5,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Helm",
+          "experience_level": 5 ,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Linux",
+          "experience_level": 5,
+          "category": "operating-systems"
+        },
+        {
+          "name": "ConcourseCI",
+          "experience_level": 4,
+          "category": "automation"
+        }
+      ]
+    },
+    {
+      "year": "2018",
+      "technologies": [
+        {
+          "name": "Ruby",
+          "experience_level": 9,
+          "category": "programming-languages"
+        },
+        {
+          "name": "Go",
+          "experience_level": 5,
+          "category": "programming-languages"
+        },
+        {
+          "name": "JavaScript",
+          "experience_level": 7,
+          "category": "programming-languages"
+        },
+        {
+          "name": "Ruby on Rails",
+          "experience_level": 6,
+          "category": "frameworks"
+        },
+        {
+          "name": "Angular",
+          "experience_level": 5,
+          "category": "frameworks"
+        },
+        {
+          "name": "React",
+          "experience_level": 4,
+          "category": "frameworks"
+        },
+        {
+          "name": "Docker",
+          "experience_level": 8,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Kubernetes",
+          "experience_level": 9,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Helm",
+          "experience_level": 8,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Linux",
+          "experience_level": 8,
+          "category": "operating-systems"
+        }
+      ]
+    }
+  ]
+}

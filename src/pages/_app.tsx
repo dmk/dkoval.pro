@@ -1,17 +1,15 @@
-import "@/styles/globals.css";
+import '@/styles/globals.css';
 
-import { useEffect } from "react";
 import { useRouter } from 'next/router';
+import React, { useEffect } from 'react';
 
-import Box from '@mui/material/Box';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
+import Navigation from '@/components/Navigation';
 
-import GoogleAnalytics from "@/components/GoogleAnalytics";
-import Navigation from "@/components/Navigation";
-import { useMediaQuery } from "@mui/material";
+declare const window: any;
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  const isMobile = useMediaQuery('(max-width:768px)');
 
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -27,7 +25,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <div className={`${isMobile ? 'mb-12 ml-0' : 'mb-0 ml-12'}`}>
+      <div className='mb-16 ml-0 md:mb-0 md:ml-16'>
         <Component {...pageProps} />
       </div>
 

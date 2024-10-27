@@ -14,7 +14,7 @@ export default function Links() {
         <LinkedInIcon className="text-sky-700 h-6 w-6" />
       </a>
       <a href="https://twitter.com/dmkov41" target="_blank" rel="noopener noreferrer" aria-label="Link to Dmytro's Twitter"
-       className="p-3 rounded-full hover:bg-gray-100 transition-colors h-12 w-12">
+        className="p-3 rounded-full hover:bg-gray-100 transition-colors h-12 w-12">
         <TwitterIcon className="text-sky-400 h-6 w-6" />
       </a>
     </div>

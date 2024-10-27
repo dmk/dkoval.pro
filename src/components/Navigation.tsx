@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 import { useRouter } from 'next/router';
 
 import HomeIcon from '@mui/icons-material/Home';
@@ -7,7 +7,13 @@ import WorkIcon from '@mui/icons-material/Work';
 import PetsIcon from '@mui/icons-material/Pets';
 import MapIcon from '@mui/icons-material/Map';
 
-const navItems = [
+interface NavItem {
+  label: string;
+  href: string;
+  icon: React.ReactNode;
+}
+
+const navItems: NavItem[] = [
   {
     label: "Home",
     href: "/",
@@ -35,7 +41,7 @@ const navItems = [
   },
 ];
 
-const Navigation = () => {
+const Navigation: React.FC = () => {
   const router = useRouter();
 
   return (
@@ -59,7 +65,7 @@ const Navigation = () => {
                         ${item.href === router.pathname ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'}
                         hover:bg-green-500 hover:text-white shadow-sm duration-300
                         cursor-pointer`}
-            id={item.tooltipId}
+            id={item.label}
             data-tooltip-target={`#nav-item-${item.label}`}
           >
             {item.icon}

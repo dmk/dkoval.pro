@@ -1,9 +1,13 @@
 import Head from 'next/head';
 
 import ProjectList from '@/components/Projects/ProjectList';
-import { fetchGitHubData } from '@/utils/github';
+import { fetchGitHubData, Project } from '@/utils/github';
 
-export default function Projects({ projects }) {
+interface ProjectsProps {
+  projects: Project[];
+}
+
+const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
     <>
       <Head>
@@ -43,3 +47,5 @@ export const getStaticProps = async () => {
     },
   };
 };
+
+export default Projects;

@@ -7,17 +7,24 @@ import { TooltipWithBounds, useTooltip } from '@visx/tooltip';
 import { scaleThreshold } from '@visx/scale';
 import { LegendItem, LegendLabel, LegendThreshold } from '@visx/legend';
 
-export const background = '#EBF4F3';
+// Define types for props
+interface GeoUkraineProps {
+  width: number;
+  height: number;
+  data: Record<string, number>;
+  valueName: string;
+  title: string;
+}
 
 // Extract features from the TopoJSON file for Ukraine
-const { features } = topojson.feature(topology, topology.objects.ukraine);
+const { features } = topojson.feature(topology, topology.objects.ukraine) as topojson.FeatureCollection;
 
 export default function GeoUkraine({
   width, height, 
   data,
-  value,
+  valueName,
   title,
-}) {
+}: GeoUkraineProps) {
   const { showTooltip, hideTooltip, tooltipData, tooltipLeft, tooltipTop } = useTooltip();
 
   const centerX = width / 2;
@@ -30,7 +37,7 @@ export default function GeoUkraine({
       .scale(scale) // Use a smaller scale initially
       .center([31, 49]) // Center projection roughly on Ukraine (Longitude, Latitude)
       .translate([centerX, centerY]) // Translate the map to the center of the SVG
-  ), [scale, centerX, centerY])
+  ), [scale, centerX, centerY]);
 
   // Create a path generator using the projection
   const pathGenerator = useMemo(() => (
@@ -43,10 +50,10 @@ export default function GeoUkraine({
 
   // Create levels automatically
   const stepSize = maxValue / 5;
-  const thresholdLevels = Array.from({ length: 5 }, (_, i) => Math.round(i + 1 * stepSize));
+  const thresholdLevels = Array.from({ length: 5 }, (_, i) => Math.round((i + 1) * stepSize));
 
   const colorScale = useMemo(() => (
-    scaleThreshold()
+    scaleThreshold<number, string>()
       .domain(thresholdLevels)
       .range(['#34d399', '#10b981', '#059669', '#047857', '#065f46'])
   ), [thresholdLevels]);
@@ -70,16 +77,16 @@ export default function GeoUkraine({
               <motion.path
                 key={`map-feature-${i}`}
                 d={paths[i] || ''}
-                fill={colorScale(data[feature.properties.name]) || '#cbd5e1'}
-                stroke={background}
+                fill={colorScale(data[feature.properties?.name as string]) || '#cbd5e1'}
+                stroke='#EBF4F3'
                 strokeWidth={1}
                 whileHover={{
                   strokeWidth: 2,
                   scale: 1.01,
                 }}
                 onMouseEnter={(event) => {
-                  const element = event.target;
-                  element.parentNode.appendChild(element);
+                  const element = event.target as SVGPathElement;
+                  (element.parentNode as Node).appendChild(element);
                 }}
                 onMouseLeave={hideTooltip}
                 onMouseMove={({ clientX, clientY }) => {
@@ -87,12 +94,12 @@ export default function GeoUkraine({
                     tooltipData: (
                       <div className='p-1 flex flex-row gap-2'>
                         <svg width={16} height={16}>
-                          <circle fill={colorScale(data[feature.properties.name]) || '#cbd5e1'} r={8} cx={8} cy={8} />
+                          <circle fill={colorScale(data[feature.properties?.name as string]) || '#cbd5e1'} r={8} cx={8} cy={8} />
                         </svg>
 
-                        {feature.properties.name}:&nbsp;
-                        {data[feature.properties.name] ? (
-                          <>{data[feature.properties.name]} {value}</>
+                        {feature.properties?.name}:&nbsp;
+                        {data[feature.properties?.name as string] ? (
+                          <>{data[feature.properties?.name as string]} {valueName}</>
                         ) : (
                           <>дані відсутні</>
                         )}
@@ -135,7 +142,7 @@ export default function GeoUkraine({
           top={tooltipTop}
           left={tooltipLeft}
         >
-          {tooltipData}
+          {tooltipData as React.ReactNode}
         </TooltipWithBounds>
       )}
     </>

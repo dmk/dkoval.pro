@@ -4,18 +4,26 @@ import { Group } from '@visx/group';
 import { scaleBand, scaleRadial } from '@visx/scale';
 import { Text } from '@visx/text';
 import { motion } from 'framer-motion';
+import { Technology } from './types';
+import GradientDefs from './GradientDefs';
 
-const getTechName = (d) => d.name;
-const getTechLevel = (d) => Number(d.experience_level);
+interface RadialBarsProps {
+  data: Technology[];
+  width: number;
+  height: number;
+}
 
-const toRadians = (x) => (x * Math.PI) / 180;
-const toDegrees = (x) => (x * 180) / Math.PI;
+const getTechName = (d: Technology) => d.name;
+const getTechLevel = (d: Technology) => Number(d.experience_level);
+
+const toRadians = (x: number) => (x * Math.PI) / 180;
+const toDegrees = (x: number) => (x * 180) / Math.PI;
 
 const margin = { top: 40, bottom: 40, left: 40, right: 40 };
 
-export default function RadialBars({ data, width, height, showControls = true }) {
+export default function RadialBars({ data, width, height }: RadialBarsProps) {
   // TODO: rotate on scroll (?)
-  const [rotation, setRotation] = useState(0);
+  const [rotation, setRotation] = useState<number>(0);
 
   // bounds
   const xMax = width - margin.left - margin.right;
@@ -24,11 +32,10 @@ export default function RadialBars({ data, width, height, showControls = true })
 
   const innerRadius = radiusMax / 3;
 
-  const xDomain = useMemo(
-    () => data.map(getTechName),
-    [data]
-  );
+  // Memoize xDomain to avoid recomputation on every render
+  const xDomain = useMemo(() => data.map(getTechName), [data]);
 
+  // Memoize xScale and yScale for better performance
   const xScale = useMemo(
     () =>
       scaleBand({
@@ -48,41 +55,15 @@ export default function RadialBars({ data, width, height, showControls = true })
     [innerRadius, radiusMax],
   );
 
-  return (width < 500 || height < 500) ? null : (
+  // Render nothing if dimensions are too small
+  if (width < 500 || height < 500) return null;
+
+  return (
     <>
       <svg width={width} height={height}>
         <Group top={yMax / 2 + margin.top} left={xMax / 2 + margin.left}>
           {/* Define a large radial gradient for the whole SVG */}
-          <defs>
-            <linearGradient id="programming-languages" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100%" y2="100%">
-              <stop offset="0" stopColor="#22c55e" />
-              <stop offset="100%" stopColor="#022c22" />
-            </linearGradient>
-            <linearGradient id="frameworks" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100%" y2="100%">
-              <stop offset="0" stopColor="#14b8a6" />
-              <stop offset="100%" stopColor="#0c4a6e" />
-            </linearGradient>
-            <linearGradient id="containerization-and-orchestration" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100%" y2="100%">
-              <stop offset="0" stopColor="#3b82f6" />
-              <stop offset="100%" stopColor="#1e1b4b" />
-            </linearGradient>
-            <linearGradient id="operating-systems" gradientUnits="userSpaceOnUse" rotate="45" x1="0" y1="0" x2="100%" y2="100%">
-              <stop offset="0" stopColor="#8b5cf6" />
-              <stop offset="100%" stopColor="#86198f" />
-            </linearGradient>
-            <linearGradient id="automation" gradientUnits="userSpaceOnUse" rotate="45" x1="0" y1="0" x2="100%" y2="100%">
-              <stop offset="0" stopColor="#d946ef" />
-              <stop offset="100%" stopColor="#3b0764" />
-            </linearGradient>
-            <linearGradient id="monitoring" gradientUnits="userSpaceOnUse" rotate="45" x1="0" y1="0" x2="100%" y2="100%">
-              <stop offset="0" stopColor="#f59e0b" />
-              <stop offset="100%" stopColor="#713f12" />
-            </linearGradient>
-            <linearGradient id="networking" gradientUnits="userSpaceOnUse" rotate="45" x1="0" y1="0" x2="100%" y2="100%">
-              <stop offset="0" stopColor="#8b5cf6" />
-              <stop offset="100%" stopColor="#86198f" />
-            </linearGradient>
-          </defs>
+          <GradientDefs />
 
           {data.map((d) => {
             const techName = getTechName(d);
@@ -99,7 +80,7 @@ export default function RadialBars({ data, width, height, showControls = true })
 
             return (
               <React.Fragment key={`bar-${techName}`}>
-                <motion.g initial={{ scale: 1 }} whileHover={{ scale: 1.05 }}>
+                <motion.g initial={{ scale: 1 }} whileHover={{ scale: 1.03 }}>
                   <Arc
                     cornerRadius={8}
                     startAngle={startAngle}

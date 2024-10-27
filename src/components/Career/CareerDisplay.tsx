@@ -1,11 +1,17 @@
-import { useState } from 'react';
-import careerData from '@/assets/career.json';
+import React, { useMemo, useState } from 'react';
+import careerJson from '@/assets/career.json';
 import RadialBars from './RadialBars';
 import { ParentSize } from '@visx/responsive';
+import { CareerData, Technology } from './types';
 
-const CareerDisplay = () => {
-  const [selectedYear, setSelectedYear] = useState(careerData.years[0].year);
-  const data = careerData.years.find((year) => year.year === selectedYear).technologies;
+const careerData: CareerData = careerJson as CareerData;
+
+const CareerDisplay: React.FC = () => {
+  const [selectedYear, setSelectedYear] = useState<string>(careerData.years[0].year);
+
+  const data: Technology[] = useMemo(() => {
+    return careerData.years.find((year) => year.year === selectedYear)?.technologies;
+  }, [selectedYear]);
 
   return (
     <>

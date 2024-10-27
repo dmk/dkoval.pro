@@ -1,12 +1,21 @@
 import Head from 'next/head';
+import React from 'react';
 
 import { ParentSize } from '@visx/responsive';
 import GeoUkraine from '@/components/Map';
 
-import populationData from '@/assets/opendata/population.json'
+import populationJson from '@/assets/opendata/population.json'
+
+interface MapData {
+  title: string;
+  valueName: string;
+  data: {
+    [region: string]: number; // TODO: have type with defined regions
+  };
+}
 
 export default function Map() {
-  const { title, value, data } = populationData;
+  const populationData: MapData = populationJson;
 
   return (
     <>
@@ -30,7 +39,12 @@ export default function Map() {
           <div className="w-full max-w-5xl h-[calc(100vh-theme(height.32))] hidden md:flex">
             <ParentSize>
               {({ height, width }) => (
-                <GeoUkraine {...{ height, width, data, title, value }} />
+                <GeoUkraine
+                  {...{height, width}}
+                  data={populationData.data}
+                  title={populationData.title}
+                  valueName={populationData.valueName}
+                />
               )}
             </ParentSize>
           </div>

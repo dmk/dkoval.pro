@@ -19,7 +19,7 @@ const PhotoModal: React.FC<PhotoModalProps> = ({ isOpen, onClose, image }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.1 }}
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 cursor-pointer"
           onClick={onClose}
         >
           <button
@@ -36,7 +36,7 @@ const PhotoModal: React.FC<PhotoModalProps> = ({ isOpen, onClose, image }) => {
             className="rounded-lg overflow-auto max-w-[90vw] max-h-[90vh] relative flex justify-center items-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center cursor-default">
               <img
                 src={image.fullSize}
                 alt={image.name}
@@ -46,8 +46,8 @@ const PhotoModal: React.FC<PhotoModalProps> = ({ isOpen, onClose, image }) => {
               {image.cats.map((cat, index) => (
                 <div
                   key={cat}
-                  className={`absolute top-4 left-4 ${cat === 'Ruby' ? 'bg-red-600' : 'bg-yellow-600'} text-white text-sm font-semibold px-3 py-1 rounded-md shadow-md`}
-                  style={{ transform: `translateY(${index * 30}px)` }}
+                  className={`absolute top-4 left-4 ${cat === 'Ruby' ? 'bg-red-600' : 'bg-cyan-600'} text-white text-xs font-semibold px-3 py-1 rounded-md shadow-md`}
+                  style={{ transform: `translateX(${index * 60}px)` }}
                 >
                   {cat}
                 </div>

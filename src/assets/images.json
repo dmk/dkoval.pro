@@ -2,91 +2,76 @@
   {
     "thumbnail": "/images/cats/thumbnails/ruby-1-thumb.avif",
     "fullSize": "/images/cats/fullsize/ruby-1.avif",
-    "name": "Ruby"
+    "cats": ["Ruby"]
   },
   {
     "thumbnail": "/images/cats/thumbnails/ruby-2-thumb.avif",
     "fullSize": "/images/cats/fullsize/ruby-2.avif",
-    "name": "Ruby"
+    "cats": ["Ruby"]
   },
   {
     "thumbnail": "/images/cats/thumbnails/lulu-1-thumb.avif",
     "fullSize": "/images/cats/fullsize/lulu-1.avif",
-    "name": "Lulu"
+    "cats": ["Lulu"]
   },
   {
     "thumbnail": "/images/cats/thumbnails/lulu-2-thumb.avif",
     "fullSize": "/images/cats/fullsize/lulu-2.avif",
-    "name": "Lulu"
+    "cats": ["Lulu"]
   },
   {
     "thumbnail": "/images/cats/thumbnails/lulu-3-thumb.avif",
     "fullSize": "/images/cats/fullsize/lulu-3.avif",
-    "name": "Lulu"
+    "cats": ["Lulu"]
   },
   {
     "thumbnail": "/images/cats/thumbnails/lulu-4-thumb.avif",
     "fullSize": "/images/cats/fullsize/lulu-4.avif",
-    "name": "Lulu"
+    "cats": ["Lulu"]
   },
   {
     "thumbnail": "/images/cats/thumbnails/lulu-5-thumb.avif",
     "fullSize": "/images/cats/fullsize/lulu-5.avif",
-    "name": "Lulu"
+    "cats": ["Lulu"]
   },
   {
     "thumbnail": "/images/cats/thumbnails/ruby-3-thumb.avif",
     "fullSize": "/images/cats/fullsize/3.avif",
-    "name": "Ruby"
-  },
-  {
-    "thumbnail": "/images/cats/thumbnails/ruby-4-thumb.avif",
-    "fullSize": "/images/cats/fullsize/ruby-4.avif",
-    "name": "Ruby"
+    "cats": ["Ruby"]
   },
   {
     "thumbnail": "/images/cats/thumbnails/ruby-5-thumb.avif",
     "fullSize": "/images/cats/fullsize/ruby-5.avif",
-    "name": "Ruby"
-  },
-  {
-    "thumbnail": "/images/cats/thumbnails/ruby-6-thumb.avif",
-    "fullSize": "/images/cats/fullsize/ruby-6.avif",
-    "name": "Ruby"
-  },
-  {
-    "thumbnail": "/images/cats/thumbnails/ruby-7-thumb.avif",
-    "fullSize": "/images/cats/fullsize/ruby-7.avif",
-    "name": "Ruby"
+    "cats": ["Ruby"]
   },
   {
     "thumbnail": "/images/cats/thumbnails/ruby-8-thumb.avif",
     "fullSize": "/images/cats/fullsize/ruby-8.avif",
-    "name": "Ruby"
+    "cats": ["Ruby"]
   },
   {
     "thumbnail": "/images/cats/thumbnails/lulu-6-thumb.avif",
     "fullSize": "/images/cats/fullsize/lulu-6.avif",
-    "name": "Lulu"
+    "cats": ["Lulu"]
   },
   {
     "thumbnail": "/images/cats/thumbnails/lulu-7-thumb.avif",
     "fullSize": "/images/cats/fullsize/lulu-7.avif",
-    "name": "Lulu"
+    "cats": ["Lulu"]
   },
   {
     "thumbnail": "/images/cats/thumbnails/lulu-8-thumb.avif",
     "fullSize": "/images/cats/fullsize/lulu-8.avif",
-    "name": "Lulu"
+    "cats": ["Lulu"]
   },
   {
     "thumbnail": "/images/cats/thumbnails/ruby-9-thumb.avif",
     "fullSize": "/images/cats/fullsize/ruby-9.avif",
-    "name": "Ruby"
+    "cats": ["Ruby"]
   },
   {
     "thumbnail": "/images/cats/thumbnails/ruby-10-thumb.avif",
     "fullSize": "/images/cats/fullsize/ruby-10.avif",
-    "name": "Ruby"
+    "cats": ["Ruby"]
   }
 ]

@@ -1,7 +1,9 @@
-import Head from 'next/head';
 import React from 'react';
 
-import PhotoGallery from '@/components/CatGallery/PhotoGallery';
+import Head from 'next/head';
+import dynamic from 'next/dynamic';
+
+const PhotoGallery = dynamic(() => (import("@/components/CatGallery/PhotoGallery").then(cmp => cmp)), { ssr: false })
 
 export default function Cats() {
   return (

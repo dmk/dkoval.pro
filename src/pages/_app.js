@@ -3,11 +3,8 @@ import "@/styles/globals.css";
 import { useEffect } from "react";
 import { useRouter } from 'next/router';
 
-import { ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
 
-import theme from '@/theme';
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Navigation from "@/components/Navigation";
 import { useMediaQuery } from "@mui/material";
@@ -30,12 +27,9 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <Box sx={{
-        mb: isMobile ? 12 : 0,
-        ml: isMobile ? 0 : 12,
-      }}>
+      <div className={`${isMobile ? 'mb-12 ml-0' : 'mb-0 ml-12'}`}>
         <Component {...pageProps} />
-      </Box>
+      </div>
 
       <Navigation />
 

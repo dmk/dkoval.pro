@@ -75,7 +75,7 @@ export default function GeoUkraine({
                 strokeWidth={1}
                 whileHover={{
                   strokeWidth: 2,
-                  scale: 1.02,
+                  scale: 1.01,
                 }}
                 onMouseEnter={(event) => {
                   const element = event.target;

@@ -16,6 +16,13 @@ export default function Career() {
       <div className="w-full h-64 md:h-[calc(100vh-theme(height.16))] mt-4 px-2">
         <h4 className="text-2xl font-bold text-center my-6">Career</h4>
 
+
+        <div className="hidden md:flex items-top justify-center">
+          <p className="text-lg text-gray-700 font-semibold">
+            The data in this section is still being updated.
+          </p>
+        </div>
+
         <div className="
           flex-grow flex justify-center items-start overflow-hidden
           px-4 py-8 w-full h-64 md:h-[calc(100%-theme(height.16))]

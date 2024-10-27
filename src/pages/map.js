@@ -3,9 +3,11 @@ import Head from 'next/head';
 import { ParentSize } from '@visx/responsive';
 import GeoUkraine from '@/components/Map';
 
-import data from '@/assets/opendata/random.json'
+import populationData from '@/assets/opendata/population.json'
 
 export default function Map() {
+  const { title, value, data } = populationData;
+
   return (
     <>
       <Head>
@@ -28,7 +30,7 @@ export default function Map() {
           <div className="w-full max-w-5xl h-[calc(100vh-theme(height.32))] hidden md:flex">
             <ParentSize>
               {({ height, width }) => (
-                <GeoUkraine {...{ height, width, data }} />
+                <GeoUkraine {...{ height, width, data, title, value }} />
               )}
             </ParentSize>
           </div>

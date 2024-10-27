@@ -14,8 +14,7 @@ const toDegrees = (x) => (x * 180) / Math.PI;
 const margin = { top: 40, bottom: 40, left: 40, right: 40 };
 
 export default function RadialBars({ data, width, height, showControls = true }) {
-  console.log(data);
-
+  // TODO: rotate on scroll (?)
   const [rotation, setRotation] = useState(0);
 
   // bounds

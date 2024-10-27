@@ -9,22 +9,20 @@ import { LegendItem, LegendLabel, LegendThreshold } from '@visx/legend';
 
 export const background = '#EBF4F3';
 
-console.log(topology)
-
 // Extract features from the TopoJSON file for Ukraine
 const { features } = topojson.feature(topology, topology.objects.ukraine);
 
 export default function GeoUkraine({
   width, height, 
-  data = {},
-  value = 'млн.',
-  title = 'Населення України, 2022.02, млн. осіб'
+  data,
+  value,
+  title,
 }) {
   const { showTooltip, hideTooltip, tooltipData, tooltipLeft, tooltipTop } = useTooltip();
 
   const centerX = width / 2;
   const centerY = height / 2 - 65;
-  const scale = (height < 500 ? height : width) / .38; // Adjust the scale to fit the width and height more flexibly
+  const scale = (height < 700 ? height : width) / .4; // Adjust the scale to fit the width and height more flexibly
 
   // Create a projection for Ukraine
   const projection = useMemo(() => (

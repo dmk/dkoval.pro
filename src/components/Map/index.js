@@ -1,24 +1,30 @@
 import React, { useMemo } from 'react';
 import { geoPath, geoMercator } from '@visx/vendor/d3-geo';
 import * as topojson from 'topojson-client';
-import topology from '@/assets/ukraine.json';
-import { color, motion } from 'framer-motion';
-import { Tooltip, TooltipWithBounds, useTooltip } from '@visx/tooltip';
-import { scaleLinear, scaleThreshold } from '@visx/scale';
+import topology from '@/assets/maps/ua-adm1.json';
+import { motion } from 'framer-motion';
+import { TooltipWithBounds, useTooltip } from '@visx/tooltip';
+import { scaleThreshold } from '@visx/scale';
 import { LegendItem, LegendLabel, LegendThreshold } from '@visx/legend';
 
 export const background = '#EBF4F3';
 
+console.log(topology)
 
 // Extract features from the TopoJSON file for Ukraine
 const { features } = topojson.feature(topology, topology.objects.ukraine);
 
-export default function GeoUkraine({ width, height, data = {}, value = 'млн.', title = 'Населення України, 2022.02, млн. осіб' }) {
+export default function GeoUkraine({
+  width, height, 
+  data = {},
+  value = 'млн.',
+  title = 'Населення України, 2022.02, млн. осіб'
+}) {
   const { showTooltip, hideTooltip, tooltipData, tooltipLeft, tooltipTop } = useTooltip();
 
   const centerX = width / 2;
   const centerY = height / 2 - 65;
-  const scale = (height < 500 ? height : width) / .35; // Adjust the scale to fit the width and height more flexibly
+  const scale = (height < 500 ? height : width) / .38; // Adjust the scale to fit the width and height more flexibly
 
   // Create a projection for Ukraine
   const projection = useMemo(() => (

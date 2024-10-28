@@ -2,20 +2,18 @@ import Head from 'next/head';
 import React from 'react';
 
 import { ParentSize } from '@visx/responsive';
-import GeoUkraine from '@/components/Map';
+import UAMap, { OblastCode } from '@dkkoval/react-ua-map';
 
 import populationJson from '@/assets/opendata/population.json'
 
 interface MapData {
   title: string;
   valueName: string;
-  data: {
-    [region: string]: number; // TODO: have type with defined regions
-  };
+  data: Record<OblastCode, number>; // TODO: have type with defined regions
 }
 
 export default function Map() {
-  const populationData: MapData = populationJson;
+  const populationData = populationJson as MapData;
 
   return (
     <>
@@ -39,7 +37,7 @@ export default function Map() {
           <div className="w-full max-w-5xl h-[calc(100vh-theme(height.32))] hidden md:flex">
             <ParentSize>
               {({ height, width }) => (
-                <GeoUkraine
+                <UAMap
                   {...{height, width}}
                   data={populationData.data}
                   title={populationData.title}

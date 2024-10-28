@@ -34,9 +34,10 @@ export const getStaticProps = async () => {
   const repoNames = [
     'fastsheet',
     'jenkins-testbed',
-    'dkoval.pro',
-    'fastai-course-notebooks',
     'temp-alert',
+    'dkoval.pro',
+    'react-ua-map',
+    'fastai-course-notebooks',
   ];
 
   const projects = await fetchGitHubData(username, repoNames);

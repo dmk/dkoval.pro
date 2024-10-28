@@ -27,7 +27,7 @@ export default function Map() {
       <div className="w-full mt-4 px-2">
         <h4 className="text-2xl font-bold text-center my-6">Maps</h4>
 
-        <div className="flex md:hidden items-top justify-center">
+        <div className="flex md:hidden items-top justify-center mt-14 px-4">
           <p className="text-lg text-gray-700 font-semibold">
             Please switch to a larger screen to view this content.
           </p>

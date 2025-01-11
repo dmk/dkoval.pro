@@ -1,9 +1,3 @@
-// const BuildAnalizer = (await import('@next/bundle-analyzer')).default;
-
-// const withBundleAnalyzer = BuildAnalizer({
-//   enabled: process.env.ANALYZE === 'true',
-// })
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -17,5 +11,4 @@ const nextConfig = {
   },
 };
 
-// export default withBundleAnalyzer(nextConfig);
 export default nextConfig;

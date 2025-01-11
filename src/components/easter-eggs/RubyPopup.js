@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Box from '@mui/material/Box';
 import RubySvg from '@/assets/ruby.svg';
 import { useState } from 'react';

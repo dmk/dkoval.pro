@@ -34,11 +34,6 @@ const navItems: NavItem[] = [
     href: "/cats",
     icon: <PetsIcon className="w-6 h-6" />,  
   },
-  {
-    label: "Map",
-    href: "/map",
-    icon: <MapIcon className="w-6 h-6" />,  
-  },
 ];
 
 const Navigation: React.FC = () => {

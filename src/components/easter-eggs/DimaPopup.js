@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Box from '@mui/material/Box';
 
 export default function DimaPopup({ active, setActive }) {
@@ -13,6 +13,7 @@ export default function DimaPopup({ active, setActive }) {
         transition={{ type: 'spring', stiffness: 200, damping: 20 }}
         style={{ display: 'none', cursor: 'pointer', y: 200 }}
       >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src='/images/dima.webp'
           alt='Dmytro'

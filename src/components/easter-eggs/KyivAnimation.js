@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { styled } from '@mui/system';
 import useWindowSize from '@/hooks/useWindowSize';
 
@@ -76,6 +76,7 @@ export default function KyivAnimation({ active, setActive }) {
           setActive(false);
         }}
       >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={currentImage.src}
           alt='Kyiv'

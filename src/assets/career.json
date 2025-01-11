@@ -54,7 +54,7 @@
           "category": "operating-systems"
         },
         {
-          "name": "Elasticsearch",
+          "name": "ELK",
           "experience_level": 2,
           "category": "monitoring"
         },

@@ -12,7 +12,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 mb-6 hover:shadow-xl hover:scale-102 duration-300">
+    <div className="bg-white shadow-md rounded-lg p-4 mb-6">
       <div className="mb-4">
         <a
           href={project.html_url}

@@ -9,24 +9,14 @@
           "category": "programming-languages"
         },
         {
-          "name": "C",
-          "experience_level": 3,
-          "category": "programming-languages"
+          "name": "Ruby on Rails",
+          "experience_level": 6,
+          "category": "frameworks"
         },
         {
           "name": "JavaScript",
           "experience_level": 6,
           "category": "programming-languages"
-        },
-        {
-          "name": "JQuery",
-          "experience_level": 4,
-          "category": "frameworks"
-        },
-        {
-          "name": "Ruby on Rails",
-          "experience_level": 6,
-          "category": "frameworks"
         },
         {
           "name": "AngularJS",
@@ -49,19 +39,39 @@
           "category": "containerization-and-orchestration"
         },
         {
-          "name": "Linux",
+          "name": "MySQL",
           "experience_level": 5,
-          "category": "operating-systems"
+          "category": "databases"
         },
         {
-          "name": "ELK",
-          "experience_level": 2,
-          "category": "monitoring"
+          "name": "PostgreSQL",
+          "experience_level": 5,
+          "category": "databases"
         },
         {
           "name": "Jenkins",
           "experience_level": 2,
           "category": "automation"
+        },
+        {
+          "name": "Concourse CI",
+          "experience_level": 2,
+          "category": "automation"
+        },
+        {
+          "name": "ElasticSearch",
+          "experience_level": 2,
+          "category": "monitoring"
+        },
+        {
+          "name": "Google Cloud",
+          "experience_level": 3,
+          "category": "cloud"
+        },
+        {
+          "name": "AWS",
+          "experience_level": 3,
+          "category": "cloud"
         }
       ]
     },
@@ -110,7 +120,7 @@
         },
         {
           "name": "Helm",
-          "experience_level": 5 ,
+          "experience_level": 5,
           "category": "containerization-and-orchestration"
         },
         {
@@ -119,7 +129,7 @@
           "category": "operating-systems"
         },
         {
-          "name": "ConcourseCI",
+          "name": "Concourse CI",
           "experience_level": 4,
           "category": "automation"
         }
@@ -177,6 +187,251 @@
           "name": "Linux",
           "experience_level": 8,
           "category": "operating-systems"
+        },
+        {
+          "name": "RabbitMQ",
+          "experience_level": 4,
+          "category": "messaging-queues"
+        },
+        {
+          "name": "Vault",
+          "experience_level": 5,
+          "category": "security"
+        },
+        {
+          "name": "Swagger",
+          "experience_level": 3,
+          "category": "api-management"
+        },
+        {
+          "name": "MySQL",
+          "experience_level": 5,
+          "category": "databases"
+        },
+        {
+          "name": "PostgreSQL",
+          "experience_level": 5,
+          "category": "databases"
+        },
+        {
+          "name": "Stackdriver",
+          "experience_level": 4,
+          "category": "monitoring"
+        }
+      ]
+    },
+    {
+      "year": "2019",
+      "technologies": [
+        {
+          "name": "Python",
+          "experience_level": 6,
+          "category": "programming-languages"
+        },
+        {
+          "name": "Prometheus",
+          "experience_level": 5,
+          "category": "monitoring"
+        },
+        {
+          "name": "Grafana",
+          "experience_level": 5,
+          "category": "monitoring"
+        },
+        {
+          "name": "Terraform",
+          "experience_level": 4,
+          "category": "automation"
+        },
+        {
+          "name": "Docker",
+          "experience_level": 8,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Kubernetes",
+          "experience_level": 8,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Linux",
+          "experience_level": 7,
+          "category": "operating-systems"
+        }
+      ]
+    },
+    {
+      "year": "2020",
+      "technologies": [
+        {
+          "name": "Python",
+          "experience_level": 7,
+          "category": "programming-languages"
+        },
+        {
+          "name": "Go",
+          "experience_level": 5,
+          "category": "programming-languages"
+        },
+        {
+          "name": "Docker",
+          "experience_level": 8,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Kubernetes",
+          "experience_level": 8,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Terraform",
+          "experience_level": 5,
+          "category": "automation"
+        },
+        {
+          "name": "AWS",
+          "experience_level": 7,
+          "category": "cloud"
+        },
+        {
+          "name": "Jenkins",
+          "experience_level": 6,
+          "category": "automation"
+        }
+      ]
+    },
+    {
+      "year": "2021",
+      "technologies": [
+        {
+          "name": "Python",
+          "experience_level": 8,
+          "category": "programming-languages"
+        },
+        {
+          "name": "JavaScript",
+          "experience_level": 7,
+          "category": "programming-languages"
+        },
+        {
+          "name": "GitHub Actions",
+          "experience_level": 6,
+          "category": "automation"
+        },
+        {
+          "name": "GitLab CI",
+          "experience_level": 6,
+          "category": "automation"
+        },
+        {
+          "name": "Kubernetes",
+          "experience_level": 9,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Jenkins",
+          "experience_level": 6,
+          "category": "automation"
+        }
+      ]
+    },
+    {
+      "year": "2022",
+      "technologies": [
+        {
+          "name": "Rust",
+          "experience_level": 5,
+          "category": "programming-languages"
+        },
+        {
+          "name": "Python",
+          "experience_level": 8,
+          "category": "programming-languages"
+        },
+        {
+          "name": "React.js",
+          "experience_level": 5,
+          "category": "frameworks"
+        },
+        {
+          "name": "Django",
+          "experience_level": 5,
+          "category": "frameworks"
+        },
+        {
+          "name": "Kubernetes",
+          "experience_level": 9,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Prometheus",
+          "experience_level": 6,
+          "category": "monitoring"
+        },
+        {
+          "name": "Grafana",
+          "experience_level": 6,
+          "category": "monitoring"
+        }
+      ]
+    },
+    {
+      "year": "2023",
+      "technologies": [
+        {
+          "name": "Rust",
+          "experience_level": 6,
+          "category": "programming-languages"
+        },
+        {
+          "name": "Python",
+          "experience_level": 8,
+          "category": "programming-languages"
+        },
+        {
+          "name": "React.js",
+          "experience_level": 6,
+          "category": "frameworks"
+        },
+        {
+          "name": "Django",
+          "experience_level": 6,
+          "category": "frameworks"
+        },
+        {
+          "name": "Kubernetes",
+          "experience_level": 9,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Docker",
+          "experience_level": 9,
+          "category": "containerization-and-orchestration"
+        },
+        {
+          "name": "Prometheus",
+          "experience_level": 7,
+          "category": "monitoring"
+        },
+        {
+          "name": "Grafana",
+          "experience_level": 7,
+          "category": "monitoring"
+        },
+        {
+          "name": "Ollama",
+          "experience_level": 5,
+          "category": "ai"
+        },
+        {
+          "name": "d3.js",
+          "experience_level": 5,
+          "category": "visualization"
+        },
+        {
+          "name": "Jenkins",
+          "experience_level": 7,
+          "category": "automation"
         }
       ]
     }

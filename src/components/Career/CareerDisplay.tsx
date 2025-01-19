@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import careerJson from '@/assets/career.json';
 import { CareerData } from './types';
-import { BarTimeline } from './BarTimeline';
+import { BarTimeline } from './bars/BarTimeline';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 
 const careerData: CareerData = careerJson as CareerData;

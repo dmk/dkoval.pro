@@ -10,6 +10,9 @@ interface BarProps {
 export const Bar: React.FC<BarProps> = ({ tech, getWidthClass }) => {
   return (
     <div className="relative h-8">
+      {/* Full width semi-transparent background matching bar color */}
+      <div className={`absolute inset-0 rounded-full ${getCategoryColor(tech.category)} opacity-50`} />
+
       {/* Background bar with text */}
       <div className="absolute inset-0 flex items-center">
         <span className="font-medium text-sm text-white truncate px-3">{tech.name}</span>
